@@ -4,4 +4,4 @@ Developers: Ella R. (producer, designer, artist, animator), SHuang (designer, ar
 
 See itch.io page for more specifics on credited used online assets. Generative AI was not used in the creation of this game.
 
-I permit the viewing and usage of any of this game's code for any reason. I permit the viewing and limited usage of this game's art, but I do not permit falsely claiming the art as your own or using it to train generative AI models.
+We permit the viewing and usage of any of this game's code for any reason. We permit the viewing and limited usage of this game's art, but we do not permit falsely claiming the art as your own or using it to train generative AI models.
