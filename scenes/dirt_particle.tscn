@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://busex87x6xojy"]
+
+[ext_resource type="Script" uid="uid://b3umcmho82j8s" path="res://scripts/dirt_particle.gd" id="1_u0m2w"]
+[ext_resource type="Texture2D" uid="uid://ct8vxqr6qynu6" path="res://assets/gfx/placeholder_andrew/DirtCircle_1.png" id="2_7c2pd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yga0m"]
+radius = 133.09395
+
+[node name="DirtParticle" type="Area2D" unique_id=1985959496]
+script = ExtResource("1_u0m2w")
+
+[node name="RandomTexture" type="TextureRect" parent="." unique_id=2130791912]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7c2pd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043868161]
+shape = SubResource("CircleShape2D_yga0m")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

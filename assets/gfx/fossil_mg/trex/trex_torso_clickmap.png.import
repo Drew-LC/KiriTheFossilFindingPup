@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b3q84rtsmxcb1"
+path="res://.godot/imported/trex_torso_clickmap.png-b55bd9d7bbb5545f28239dca5755c04c.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/trex/trex_torso_clickmap.png"
+dest_files=["res://.godot/imported/trex_torso_clickmap.png-b55bd9d7bbb5545f28239dca5755c04c.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

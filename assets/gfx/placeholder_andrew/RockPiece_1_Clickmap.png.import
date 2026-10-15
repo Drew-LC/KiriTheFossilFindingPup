@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dpi6gbdqg602i"
+path="res://.godot/imported/RockPiece_1_Clickmap.png-be36aa8f763901cceb20bd509147856a.res"
+
+[deps]
+
+source_file="res://assets/gfx/placeholder_andrew/RockPiece_1_Clickmap.png"
+dest_files=["res://.godot/imported/RockPiece_1_Clickmap.png-be36aa8f763901cceb20bd509147856a.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

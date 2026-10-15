@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://3kose4x18bxp"]
+
+[ext_resource type="Script" uid="uid://b6c4wvxxvocxi" path="res://scripts/quest_giver.gd" id="1_a6ufv"]
+[ext_resource type="Texture2D" uid="uid://ca2mhvesctxlk" path="res://assets/gfx/museum cat/museumcat1.png" id="2_dfhp8"]
+[ext_resource type="PackedScene" uid="uid://bilcnib66fkov" path="res://scenes/quest_board.tscn" id="3_4npqg"]
+[ext_resource type="Texture2D" uid="uid://bj8fed5ue2sdd" path="res://assets/gfx/museum cat/museumcat2.png" id="3_yh2gm"]
+[ext_resource type="Texture2D" uid="uid://bv2v76lfvefe" path="res://assets/gfx/museum cat/museumcat3.png" id="4_d21h7"]
+[ext_resource type="Texture2D" uid="uid://cpd82au1pw7u1" path="res://assets/gfx/museum cat/museumcat4.png" id="5_n4thc"]
+[ext_resource type="Texture2D" uid="uid://c4soheqmedna7" path="res://assets/gfx/UI/kiri/Cat_ExclaimationMark.png" id="6_dfhp8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jew7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dfhp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yh2gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d21h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n4thc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="QuestGiver" type="Area2D" unique_id=962680929]
+script = ExtResource("1_a6ufv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1139280162]
+polygon = PackedVector2Array(-889, 1076, -869, 2092, 253, 2112, 243, 1081)
+
+[node name="Owner" type="AnimatedSprite2D" parent="." unique_id=1868338478]
+position = Vector2(-302.99997, 1582)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4jew7")
+autoplay = "default"
+frame_progress = 0.7292727
+
+[node name="ExclaimationMark" type="Sprite2D" parent="Owner" unique_id=1207514058]
+position = Vector2(749.99976, -1720)
+scale = Vector2(4.9060297, 4.90603)
+texture = ExtResource("6_dfhp8")
+
+[node name="QuestBoard" parent="." unique_id=666313516 instance=ExtResource("3_4npqg")]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

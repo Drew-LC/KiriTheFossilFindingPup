@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://btu3oe57r2lm3"
+path="res://.godot/imported/Dinosaur1_Dust_Clickmap_2.png-ed68d417da4d27a27dd240fe06ae25f3.res"
+
+[deps]
+
+source_file="res://assets/gfx/placeholder_andrew/Dinosaur1_Dust_Clickmap_2.png"
+dest_files=["res://.godot/imported/Dinosaur1_Dust_Clickmap_2.png-ed68d417da4d27a27dd240fe06ae25f3.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

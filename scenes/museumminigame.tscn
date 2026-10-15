@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://opt5cu7y013j"]
+
+[ext_resource type="Script" uid="uid://06q2u3yslfs" path="res://scripts/museumminigame.gd" id="1_hyp0j"]
+[ext_resource type="Script" uid="uid://c6205v768udtr" path="res://scripts/snap_zone.gd" id="1_kavjo"]
+[ext_resource type="Texture2D" uid="uid://dqhvagk4ppkxw" path="res://assets/gfx/placeholder_keith/IMG_0461.png" id="2_kavjo"]
+[ext_resource type="Texture2D" uid="uid://cx7po57t61kpg" path="res://assets/gfx/placeholder_keith/IMG_0463.png" id="3_2ica8"]
+[ext_resource type="Texture2D" uid="uid://r87s2vfv01e2" path="res://assets/gfx/overworld/museum/bg_selection_screen.jpeg" id="3_jnajh"]
+[ext_resource type="Texture2D" uid="uid://dff0un2m64do3" path="res://assets/gfx/placeholder_keith/IMG_0462.png" id="4_3r8v8"]
+[ext_resource type="Texture2D" uid="uid://da61e3fbfb6nc" path="res://assets/gfx/placeholder_keith/IMG_0464.png" id="5_8aw41"]
+[ext_resource type="Texture2D" uid="uid://bfcmvt7avary7" path="res://assets/gfx/placeholder_keith/IMG_0465.png" id="6_cs6we"]
+[ext_resource type="Script" uid="uid://dag4kkkre20yn" path="res://scripts/fossil_pieces.gd" id="8_2ica8"]
+[ext_resource type="Texture2D" uid="uid://pi6tde7axekp" path="res://assets/gfx/overworld/museum/full_outline_trex.png" id="9_2nv18"]
+[ext_resource type="Texture2D" uid="uid://cjj56dolol5id" path="res://assets/gfx/fossil_mg/trex/trex_legs_fossil.png" id="10_nvp46"]
+[ext_resource type="Texture2D" uid="uid://b5eyt5xgsq2w2" path="res://assets/gfx/fossil_mg/trex/trex_skull_fossil.png" id="11_2nv18"]
+[ext_resource type="Texture2D" uid="uid://c7y12vquxjo1j" path="res://assets/gfx/fossil_mg/trex/trex_torso_fossil.png" id="12_0ioim"]
+[ext_resource type="Texture2D" uid="uid://2klfb1f10twm" path="res://assets/gfx/fossil_mg/trex/trex_hands_fossil.png" id="13_l2ru1"]
+[ext_resource type="Texture2D" uid="uid://clyl1xswefipx" path="res://assets/gfx/fossil_mg/trex/trex_tail_fossil.png" id="15_l6rcf"]
+
+[node name="Node2D" type="Node2D" unique_id=1682184262]
+script = ExtResource("1_hyp0j")
+
+[node name="SnapZone" type="Node2D" parent="." unique_id=898674815]
+
+[node name="Head" type="Area2D" parent="SnapZone" unique_id=593027491 groups=["snap_zones"]]
+position = Vector2(232, 203.00002)
+scale = Vector2(1.045, 1.045)
+script = ExtResource("1_kavjo")
+required_piece_id = "head"
+snap_offset = Vector2(2, -30.075)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SnapZone/Head" unique_id=999686147]
+position = Vector2(-218.18182, -196.17227)
+polygon = PackedVector2Array(296, 173, 322, 188, 323, 202, 328, 208, 341, 215, 343, 223, 337, 244, 326, 259, 300, 285, 290, 294, 277, 293, 269, 284, 237, 258, 226, 250, 228, 233, 232, 224, 262, 200, 272, 183, 283.25357, 177.9904)
+
+[node name="Body" type="Area2D" parent="SnapZone" unique_id=1215808884 groups=["snap_zones"]]
+position = Vector2(329, 169)
+script = ExtResource("1_kavjo")
+required_piece_id = "body"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SnapZone/Body" unique_id=1486769306]
+position = Vector2(-294, -163)
+polygon = PackedVector2Array(325, 188, 340, 187, 364, 200, 402, 200, 474, 186, 491, 191, 530, 209, 538, 215, 545, 236, 544, 246, 562, 287, 559, 298, 499, 317, 450, 321, 402, 303, 338, 251, 331, 244, 323, 211, 321, 198)
+
+[node name="Legs" type="Area2D" parent="SnapZone" unique_id=1663746075 groups=["snap_zones"]]
+position = Vector2(440, 204)
+script = ExtResource("1_kavjo")
+required_piece_id = "legs"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SnapZone/Legs" unique_id=1875350469]
+position = Vector2(-554, -323.00003)
+scale = Vector2(1.180757, 1.180757)
+polygon = PackedVector2Array(587, 271, 553, 328, 548, 351, 563, 398, 551, 415, 526, 416, 496, 441, 517, 449, 532, 429, 562, 425, 651, 438, 663, 432, 667, 413, 663, 380, 660, 369, 621, 347, 588, 294, 600, 282, 599, 268)
+
+[node name="Tail" type="Area2D" parent="SnapZone" unique_id=1310932811 groups=["snap_zones"]]
+position = Vector2(528, 177)
+script = ExtResource("1_kavjo")
+required_piece_id = "tail"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SnapZone/Tail" unique_id=1234689330]
+position = Vector2(-521, -199)
+polygon = PackedVector2Array(535, 215, 555, 206, 584, 208, 633, 228, 682, 234, 902, 212, 935, 227, 954, 234, 944, 235, 864, 229, 755, 263, 656, 284, 639, 311, 594, 282, 540, 238)
+
+[node name="Arms" type="Area2D" parent="SnapZone" unique_id=988525239 groups=["snap_zones"]]
+position = Vector2(349, 228)
+script = ExtResource("1_kavjo")
+required_piece_id = "arms"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SnapZone/Arms" unique_id=581396772]
+position = Vector2(-350, -272)
+polygon = PackedVector2Array(391, 275, 439, 279, 444, 288, 420, 308, 422, 335, 422, 354, 394, 373, 367, 359, 365, 349, 389, 334, 388, 318)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1954797773]
+position = Vector2(575.05, 322.53433)
+scale = Vector2(0.3015365, 0.30043116)
+texture = ExtResource("3_jnajh")
+
+[node name="TrexTail" type="Sprite2D" parent="." unique_id=107506642]
+visible = false
+modulate = Color(0.3073803, 0.3073803, 0.3073803, 1)
+position = Vector2(619, 312)
+scale = Vector2(0.259, 0.25)
+texture = ExtResource("2_kavjo")
+
+[node name="TrexLegs" type="Sprite2D" parent="." unique_id=591614145]
+visible = false
+modulate = Color(0.3688054, 0.3688054, 0.3688054, 1)
+position = Vector2(617, 343)
+scale = Vector2(0.207, 0.25)
+texture = ExtResource("3_2ica8")
+
+[node name="TrexBody" type="Sprite2D" parent="." unique_id=2100800016]
+visible = false
+modulate = Color(0.3073803, 0.3073803, 0.3073803, 1)
+position = Vector2(575, 284)
+scale = Vector2(0.244, 0.252)
+texture = ExtResource("4_3r8v8")
+
+[node name="TrexArm" type="Sprite2D" parent="." unique_id=1874892416]
+visible = false
+modulate = Color(0.3073803, 0.3073803, 0.3073803, 1)
+position = Vector2(602, 334)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_8aw41")
+
+[node name="TrexHead" type="Sprite2D" parent="." unique_id=1232914207]
+visible = false
+modulate = Color(0.3073803, 0.3073803, 0.3073803, 1)
+position = Vector2(573, 270)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_cs6we")
+
+[node name="TrexOutline" type="Sprite2D" parent="." unique_id=1197228334]
+position = Vector2(617.8753, 294)
+rotation = 0.027030673
+scale = Vector2(0.27751082, 0.27751082)
+texture = ExtResource("9_2nv18")
+
+[node name="FossilPieces" type="Node2D" parent="." unique_id=1186914903]
+position = Vector2(971, -30)
+scale = Vector2(0.25, 0.25)
+
+[node name="DragArms" type="TextureButton" parent="FossilPieces" unique_id=1105664144]
+offset_left = -252.00049
+offset_top = 1256.0
+offset_right = 266.61963
+offset_bottom = 1828.4517
+scale = Vector2(0.725, 0.725)
+pivot_offset = Vector2(160, 264)
+texture_normal = ExtResource("13_l2ru1")
+stretch_mode = 5
+script = ExtResource("8_2ica8")
+piece_id = "arms"
+
+[node name="DragBody" type="TextureButton" parent="FossilPieces" unique_id=1255871117]
+offset_left = -1062.7861
+offset_top = 1822.7198
+offset_right = 376.62622
+offset_bottom = 2743.8008
+scale = Vector2(0.779, 0.779)
+pivot_offset = Vector2(445.6726, 160)
+texture_normal = ExtResource("12_0ioim")
+stretch_mode = 5
+script = ExtResource("8_2ica8")
+piece_id = "body"
+
+[node name="Drag Leg" type="TextureButton" parent="FossilPieces" unique_id=208816952]
+offset_left = -496.00024
+offset_top = 344.00006
+offset_right = 1440.1638
+offset_bottom = 1866.3882
+scale = Vector2(0.536, 0.536)
+texture_normal = ExtResource("10_nvp46")
+stretch_mode = 5
+script = ExtResource("8_2ica8")
+piece_id = "legs"
+
+[node name="DragHead" type="TextureButton" parent="FossilPieces" unique_id=1719709592]
+offset_left = -3788.0
+offset_top = 276.0
+offset_right = -3131.0
+offset_bottom = 933.0
+scale = Vector2(0.81375647, 0.81375647)
+pivot_offset = Vector2(340, 524)
+texture_normal = ExtResource("11_2nv18")
+stretch_mode = 5
+script = ExtResource("8_2ica8")
+piece_id = "head"
+
+[node name="DragTail" type="TextureButton" parent="FossilPieces" unique_id=1568713984]
+offset_left = -3720.0
+offset_top = 2128.0
+offset_right = -1916.0
+offset_bottom = 2623.0
+texture_normal = ExtResource("15_l6rcf")
+stretch_mode = 5
+script = ExtResource("8_2ica8")
+piece_id = "tail"

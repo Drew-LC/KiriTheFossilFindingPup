@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cup7athgbt0ug"]
+
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="1_l5jun"]
+
+[resource]
+line_spacing = 5.0
+font = ExtResource("1_l5jun")
+font_size = 30
+outline_size = 10
+outline_color = Color(0.86, 0.7221134, 0.5418, 0.6431373)
+shadow_size = 10
+shadow_color = Color(0.6666667, 0.4745098, 0.34901962, 1)

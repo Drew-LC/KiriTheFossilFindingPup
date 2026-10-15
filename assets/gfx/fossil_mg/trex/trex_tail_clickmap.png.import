@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bnh10fbwmk2mq"
+path="res://.godot/imported/trex_tail_clickmap.png-9fd8cef195d184f30bbb566d7b179355.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/trex/trex_tail_clickmap.png"
+dest_files=["res://.godot/imported/trex_tail_clickmap.png-9fd8cef195d184f30bbb566d7b179355.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

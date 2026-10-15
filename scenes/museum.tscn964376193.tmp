@@ -1,0 +1,375 @@
+[gd_scene format=3 uid="uid://7b5wumoogq0v"]
+
+[ext_resource type="Texture2D" uid="uid://but8n4d52o5n8" path="res://assets/gfx/overworld/kiribg.museuminterior.png" id="1_5qjhm"]
+[ext_resource type="Script" uid="uid://d05d76ckg4g7e" path="res://scripts/museumcam.gd" id="1_kf0j1"]
+[ext_resource type="PackedScene" uid="uid://d085unnqivpab" path="res://scenes/kiricharacter.tscn" id="2_kf0j1"]
+[ext_resource type="Texture2D" uid="uid://bp2pmw64ueuyf" path="res://assets/gfx/UI/minimap/Museum_Radar.jpg" id="3_rblvo"]
+[ext_resource type="PackedScene" uid="uid://bapan2er85wre" path="res://scenes/door.tscn" id="4_4kxtc"]
+[ext_resource type="Shader" uid="uid://c8c46sr1iubpe" path="res://addons/lbg/godottools/dropshadow2d/advanced_blur.gdshader" id="4_qq64g"]
+[ext_resource type="Texture2D" uid="uid://cbra8544s2e5s" path="res://assets/gfx/overworld/museum/bg_id_sheet.jpeg" id="6_r4rf8"]
+[ext_resource type="Script" uid="uid://dtb52moprhns5" path="res://scripts/Crafting.gd" id="6_yucoh"]
+[ext_resource type="Texture2D" uid="uid://bl486f2vktn8k" path="res://assets/gfx/placeholder_mark/button_next.png" id="8_1egm5"]
+[ext_resource type="Texture2D" uid="uid://cxwup1p6kysks" path="res://assets/gfx/placeholder_mark/button_next_hover.png" id="9_17uic"]
+[ext_resource type="Texture2D" uid="uid://b61guepcpccyo" path="res://assets/gfx/placeholder_keith/quit.png" id="10_r4rf8"]
+[ext_resource type="Texture2D" uid="uid://0yx0yyj7njo2" path="res://assets/gfx/placeholder_keith/rex.indyb.png" id="12_ylc65"]
+[ext_resource type="Texture2D" uid="uid://b4eeaka2hwifs" path="res://assets/gfx/placeholder_keith/ank.indyb.png" id="13_0dhut"]
+[ext_resource type="Texture2D" uid="uid://dx321smirlskx" path="res://assets/gfx/placeholder_keith/Sign-check-icon.png" id="13_5r0we"]
+[ext_resource type="PackedScene" uid="uid://opt5cu7y013j" path="res://scenes/museumminigame.tscn" id="14_5r0we"]
+[ext_resource type="Texture2D" uid="uid://wt03elnlrxma" path="res://assets/gfx/placeholder_keith/mamo.indyb.png" id="14_f2m30"]
+[ext_resource type="PackedScene" uid="uid://uj4nrcytih6c" path="res://scenes/idsheet.tscn" id="15_1egm5"]
+[ext_resource type="Texture2D" uid="uid://dlkdhd2oiptjo" path="res://assets/gfx/placeholder_keith/TrexFull.png" id="16_17uic"]
+[ext_resource type="PackedScene" uid="uid://cfm3rxarryfrj" path="res://scenes/anklyosaurusminigame.tscn" id="16_totbi"]
+[ext_resource type="PackedScene" uid="uid://3kose4x18bxp" path="res://scenes/quest_giver.tscn" id="17_17uic"]
+[ext_resource type="VideoStream" uid="uid://e7c5jjiglyj3" path="res://assets/video/Trex.ogv" id="17_ato2x"]
+[ext_resource type="Script" uid="uid://06q2u3yslfs" path="res://scripts/museumminigame.gd" id="17_ylc65"]
+[ext_resource type="Script" uid="uid://bbtmjs8y8mba1" path="res://scripts/inspect.gd" id="18_r4rf8"]
+[ext_resource type="PackedScene" uid="uid://batph42wnmyg" path="res://scenes/MamenchisaurusMinigame.tscn" id="18_ylc65"]
+[ext_resource type="Texture2D" uid="uid://doldwx3afpe7p" path="res://assets/gfx/placeholder_andrew/HUD/tutorial/tutorial_arrow.png" id="20_1w7cn"]
+[ext_resource type="Texture2D" uid="uid://dl2l08yxj2nwo" path="res://assets/gfx/placeholder_keith/IMG_0622.png" id="22_f2m30"]
+[ext_resource type="Texture2D" uid="uid://djy6djxkmtfyp" path="res://assets/gfx/placeholder_keith/IMG_0619.png" id="23_3phei"]
+[ext_resource type="VideoStream" uid="uid://b3yythos3l1e1" path="res://assets/video/Anklyosaurus.ogv" id="25_ts8i5"]
+[ext_resource type="VideoStream" uid="uid://chlrq32fpg13a" path="res://assets/video/Mamenchisaurus.ogv" id="26_4nrwy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3phei"]
+shader = ExtResource("4_qq64g")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r0we"]
+size = Vector2(98.40617, 5.486809)
+
+[sub_resource type="GDScript" id="GDScript_srbig"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi5hc"]
+size = Vector2(1336, 1317)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ato2x"]
+size = Vector2(902, 89.75)
+
+[node name="museumScene" type="Node2D" unique_id=77295560]
+visibility_layer = 3
+script = ExtResource("1_kf0j1")
+
+[node name="museumImage" type="Sprite2D" parent="." unique_id=1204493164]
+position = Vector2(580.0002, 324.75)
+texture = ExtResource("1_5qjhm")
+
+[node name="wallsmuseum" type="StaticBody2D" parent="museumImage" unique_id=1781420220]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1044263989]
+build_mode = 1
+polygon = PackedVector2Array(4131.9443, -2392.5522, 4375, 1418.1533, 3645.8328, 1492.6299, 3758.6794, 3106.2837, -3576.3909, 3093.871, -3498.2659, 1008.5337, -4027.78, 1020.9463, -3897.5715, -1548.4873, -3532.9883, -1548.4873, -3411.4604, -2926.2993, -1710.0713, -2938.7122, -1571.1824, -2442.2031)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1603010762]
+build_mode = 1
+polygon = PackedVector2Array(-1579.8628, -2293.2505, 2161.4575, -2243.5996, 2161.4575, -1771.9163, -1545.1406, -1771.9163)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=251236116]
+build_mode = 1
+polygon = PackedVector2Array(2361.1104, -2181.5361, 3932.291, -2243.5996, 3949.6523, -1833.9797, 2361.1104, -1833.9797)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1958247727]
+build_mode = 1
+polygon = PackedVector2Array(-3315.974, -2740.1086, -1848.9602, -2752.5215, -1744.7935, -1734.678, -3368.0576, -1722.2654)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=307405542]
+build_mode = 1
+polygon = PackedVector2Array(-2109.3767, -1138.8674, -1267.3628, -1089.2166, -1232.6406, -356.86597, -2144.099, -319.6277)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1729289193]
+build_mode = 1
+polygon = PackedVector2Array(1223.957, -1039.5657, 2092.0127, -1002.3274, 2152.7769, -319.6277, 1206.5962, -356.86597)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=2090024852]
+build_mode = 1
+polygon = PackedVector2Array(1085.0684, 1070.5972, 2916.666, 1083.0098, 2994.791, 1989.1387, 1102.4292, 2051.2021)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=128430162]
+position = Vector2(5.999817, 42.25)
+build_mode = 1
+polygon = PackedVector2Array(-3029.5159, 1070.5972, -1258.6821, 1083.0098, -1245.0002, 2005.25, -1334.0002, 2109.25, -2927.0002, 2069.25, -3043.0002, 1980.25)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=180754476]
+build_mode = 1
+polygon = PackedVector2Array(-3784.7244, -1300.2327, -3376.7383, -1300.2327, -3376.7383, 735.4536, -3836.8076, 747.8667)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=329507500]
+build_mode = 1
+polygon = PackedVector2Array(3142.3604, 648.56445, 4097.2217, 685.80273, 4114.583, 1231.9624, 3177.083, 1244.3755)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=584923075]
+build_mode = 1
+polygon = PackedVector2Array(-2621.5298, 2274.6313, -2013.8906, 2224.9805, -2031.2517, 2709.0767, -2586.8074, 2733.9019)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1663964127]
+build_mode = 1
+polygon = PackedVector2Array(2039.9297, 2299.4565, 2621.5269, 2274.6313, 2638.8882, 2733.9019, 2031.249, 2758.7275)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1728997908]
+polygon = PackedVector2Array(-558.0002, -198.75, 478.99982, -197.75, 488.99982, 695.25, 434.99982, 825.25, -544.0002, 849.25)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="museumImage/wallsmuseum" unique_id=1246738951]
+build_mode = 1
+polygon = PackedVector2Array(-3177.0854, 350.65918, -2491.3213, 387.89746, -2491.3213, 772.6919, -3151.0437, 834.7554)
+
+[node name="RadarMap" type="Sprite2D" parent="." unique_id=943178423]
+visibility_layer = 2
+z_index = -10
+position = Vector2(615, 489.00003)
+scale = Vector2(7.6546397, 7.6546397)
+texture = ExtResource("3_rblvo")
+
+[node name="Kiri" parent="." unique_id=66845406 instance=ExtResource("2_kf0j1")]
+position = Vector2(677, 1975)
+scale = Vector2(3, 3)
+
+[node name="DropShadow2D" parent="Kiri/animated_sprite_2d/Sprite2D" parent_id_path=PackedInt32Array(66845406, 165911319) index="0" unique_id=928541503]
+material = SubResource("ShaderMaterial_3phei")
+position = Vector2(6.666626, 14.134277)
+
+[node name="Camera2D" parent="Kiri" index="2" unique_id=1755670444]
+zoom = Vector2(0.25, 0.25)
+limit_left = -4200
+limit_top = -3500
+limit_right = 5600
+limit_bottom = 3500
+
+[node name="Doors" type="Node" parent="." unique_id=256296423]
+
+[node name="museumEntrance" parent="Doors" unique_id=790956761 instance=ExtResource("4_4kxtc")]
+position = Vector2(567.9999, 3360.0002)
+scale = Vector2(10, 10)
+destination_level_tag = "village"
+destination_door_tag = "door_to_museum"
+spawn_direction = "down"
+check = true
+
+[node name="CollisionShape2D" parent="Doors/museumEntrance" index="0" unique_id=1936581892]
+position = Vector2(0.1000061, 0.3999691)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_5r0we")
+script = SubResource("GDScript_srbig")
+
+[node name="Spawn" parent="Doors/museumEntrance" index="1" unique_id=1085989013]
+position = Vector2(0.2000122, -25.100025)
+
+[node name="Bench" type="Area2D" parent="." unique_id=433715033]
+position = Vector2(586, 661)
+script = ExtResource("6_yucoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bench" unique_id=1619791110]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_fi5hc")
+
+[node name="List" type="CanvasLayer" parent="Bench/CollisionShape2D" unique_id=1768638389]
+layer = 2
+visible = false
+
+[node name="BlackDarkSeamlessFabricTextureInterlacingStructureScannedVeryHighExtensionResolutionCanBeUsedCreating242259845" type="Sprite2D" parent="Bench/CollisionShape2D/List" unique_id=140610745]
+position = Vector2(579.99994, 326)
+scale = Vector2(0.4267936, 0.3173828)
+texture = ExtResource("6_r4rf8")
+
+[node name="Left" type="Button" parent="Bench/CollisionShape2D/List" unique_id=1177610617 groups=["UI"]]
+offset_left = 805.0
+offset_top = 230.99998
+offset_right = 1613.0
+offset_bottom = 1039.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("8_1egm5")
+flat = true
+
+[node name="Right" type="Button" parent="Bench/CollisionShape2D/List" unique_id=1513762132 groups=["UI"]]
+offset_left = 350.0
+offset_top = 400.0
+offset_right = 1158.0
+offset_bottom = 1208.0
+rotation = 3.1415927
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("9_17uic")
+flat = true
+
+[node name="Check" type="Button" parent="Bench/CollisionShape2D/List" unique_id=1563502787 groups=["UI"]]
+offset_left = 537.0
+offset_top = 408.99997
+offset_right = 1569.0
+offset_bottom = 1441.0
+scale = Vector2(0.09, 0.09)
+icon = ExtResource("13_5r0we")
+flat = true
+
+[node name="Close" type="Button" parent="Bench/CollisionShape2D/List" unique_id=1518462470 groups=["UI"]]
+offset_left = 1082.0
+offset_right = 1450.1821
+offset_bottom = 365.0
+scale = Vector2(0.22, 0.22)
+icon = ExtResource("10_r4rf8")
+flat = true
+
+[node name="Trex" type="Sprite2D" parent="Bench/CollisionShape2D/List" unique_id=86861548]
+visible = false
+position = Vector2(572.00006, 268)
+scale = Vector2(0.07777902, 0.07790937)
+texture = ExtResource("12_ylc65")
+
+[node name="Ankylosaurus" type="Sprite2D" parent="Bench/CollisionShape2D/List" unique_id=584345611]
+visible = false
+position = Vector2(592, 292.00006)
+scale = Vector2(0.0776931, 0.0579443)
+texture = ExtResource("13_0dhut")
+
+[node name="Mamenchisaurus" type="Sprite2D" parent="Bench/CollisionShape2D/List" unique_id=988184133]
+position = Vector2(571, 307)
+scale = Vector2(0.074473836, 0.084534444)
+texture = ExtResource("14_f2m30")
+
+[node name="Minigames" type="CanvasLayer" parent="." unique_id=1225259975]
+layer = 2
+
+[node name="TrexMinigame" parent="Minigames" unique_id=1682184262 instance=ExtResource("14_5r0we")]
+visible = false
+
+[node name="AnkylosaurusMinigame" parent="Minigames" unique_id=1773227606 instance=ExtResource("16_totbi")]
+visible = false
+script = ExtResource("17_ylc65")
+
+[node name="MamenchisaurusMinigame" parent="Minigames" unique_id=1442685119 instance=ExtResource("18_ylc65")]
+visible = false
+script = ExtResource("17_ylc65")
+
+[node name="IDSheet" parent="." unique_id=565713484 instance=ExtResource("15_1egm5")]
+layer = 2
+visible = false
+
+[node name="TrexFull" type="TextureRect" parent="." unique_id=1351864769]
+visible = false
+offset_left = -3139.0
+offset_top = -3125.0
+offset_right = 7042.333
+offset_bottom = 4511.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16_17uic")
+
+[node name="AnklyosaurusFull" type="TextureRect" parent="." unique_id=1522439245]
+visible = false
+offset_left = 1809.0
+offset_top = 1297.0
+offset_right = 5026.0
+offset_bottom = 3253.0
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("22_f2m30")
+
+[node name="MamenchisaurusFull" type="TextureRect" parent="." unique_id=654864439]
+visible = false
+offset_left = -31.000008
+offset_top = -3120.0002
+offset_right = 3924.0
+offset_bottom = -408.00024
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("23_3phei")
+
+[node name="DinoAnim" type="CanvasLayer" parent="." unique_id=51866191]
+layer = 3
+visible = false
+
+[node name="Control" type="Control" parent="DinoAnim" unique_id=748444961]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TrexAnimation" type="VideoStreamPlayer" parent="DinoAnim/Control" unique_id=1448274358]
+top_level = true
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("17_ato2x")
+
+[node name="AnklyosaurusAnimation" type="VideoStreamPlayer" parent="DinoAnim/Control" unique_id=2027746121]
+top_level = true
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("25_ts8i5")
+autoplay = true
+
+[node name="MamenchisaurusAnimation" type="VideoStreamPlayer" parent="DinoAnim/Control" unique_id=1371659574]
+top_level = true
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("26_4nrwy")
+autoplay = true
+
+[node name="QuestGiver" parent="." unique_id=962680929 instance=ExtResource("17_17uic")]
+position = Vector2(161, 769)
+
+[node name="Owner" parent="QuestGiver" index="1" unique_id=1868338478]
+position = Vector2(-354, 1523)
+
+[node name="ExclaimationMark" parent="QuestGiver/Owner" index="0" unique_id=1207514058]
+position = Vector2(1008, -871.9999)
+
+[node name="inspect" type="Area2D" parent="." unique_id=1435576274]
+script = ExtResource("18_r4rf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inspect" unique_id=1906926093]
+position = Vector2(-2015, -1362.875)
+shape = SubResource("RectangleShape2D_ato2x")
+
+[node name="TutorialArrow1" type="TextureRect" parent="." unique_id=59860734]
+visible = false
+offset_left = 780.0
+offset_top = 2637.0
+offset_right = 970.0
+offset_bottom = 2737.0
+rotation = 1.5707964
+scale = Vector2(3.3629422, 3.3629422)
+mouse_filter = 2
+texture = ExtResource("20_1w7cn")
+
+[node name="TutorialArrow2" type="TextureRect" parent="." unique_id=1035801869]
+visible = false
+offset_left = 410.0
+offset_top = 1910.0
+offset_right = 600.0
+offset_bottom = 2010.0
+rotation = -1.5707964
+scale = Vector2(3.3629422, 3.3629422)
+mouse_filter = 2
+texture = ExtResource("20_1w7cn")
+
+[connection signal="body_entered" from="Bench" to="Bench" method="_on_body_entered"]
+[connection signal="body_exited" from="Bench" to="Bench" method="_on_body_exited"]
+[connection signal="pressed" from="Bench/CollisionShape2D/List/Left" to="Bench" method="_on_left_pressed"]
+[connection signal="pressed" from="Bench/CollisionShape2D/List/Right" to="Bench" method="_on_right_pressed"]
+[connection signal="pressed" from="Bench/CollisionShape2D/List/Check" to="Bench" method="_on_check_pressed"]
+[connection signal="pressed" from="Bench/CollisionShape2D/List/Close" to="Bench" method="_on_close_pressed"]
+[connection signal="body_entered" from="inspect" to="inspect" method="_on_body_entered"]
+[connection signal="body_exited" from="inspect" to="inspect" method="_on_body_exited"]
+[connection signal="call_tween" from="inspect" to="Kiri" method="_on_inspect_call_tween"]
+
+[editable path="Kiri"]
+[editable path="Doors/museumEntrance"]
+[editable path="QuestGiver"]

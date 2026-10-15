@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://gdhrqnb77pvp"]
+
+[ext_resource type="Script" path="res://scripts/audio_player_test.gd" id="1_d3mfm"]
+
+[node name="AudioPlayerTest" type="Control" unique_id=1933551222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3mfm")
+
+[node name="AMBSilence_Button" type="Button" parent="." unique_id=794006824]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 48.0
+offset_right = 321.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "SILENT AMB"
+
+[node name="AMB1_Button" type="Button" parent="." unique_id=60306682]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 144.0
+offset_right = 321.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 30
+text = "AMBIENCE 1"
+
+[node name="AMB2_Button" type="Button" parent="." unique_id=1394762022]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 256.0
+offset_right = 321.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 30
+text = "AMBIENCE 2"
+
+[node name="AMB3_Button" type="Button" parent="." unique_id=478983696]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 376.0
+offset_right = 321.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 30
+text = "AMBIENCE 3"
+
+[node name="BGMSilence_Button" type="Button" parent="." unique_id=2021580432]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 48.0
+offset_right = 649.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 30
+text = "SILENT BGM"
+
+[node name="BGM1_Button" type="Button" parent="." unique_id=1406875553]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 649.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 30
+text = "MUSIC 1"
+
+[node name="BGM2_Button" type="Button" parent="." unique_id=530465843]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 256.0
+offset_right = 649.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 30
+text = "MUSIC 2"
+
+[node name="BGM3_Button" type="Button" parent="." unique_id=757918107]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 376.0
+offset_right = 649.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 30
+text = "MUSIC 3
+"
+
+[node name="SFX1_Button" type="Button" parent="." unique_id=1261002724]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 144.0
+offset_right = 953.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 30
+text = "SFX 1"
+
+[node name="SFX2_Button" type="Button" parent="." unique_id=672854105]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 256.0
+offset_right = 953.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 30
+text = "SFX 2"
+
+[node name="SFX3_Button" type="Button" parent="." unique_id=1382226479]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 376.0
+offset_right = 953.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 30
+text = "SFX 3"
+
+[connection signal="pressed" from="AMBSilence_Button" to="." method="_on_amb_silence_button_pressed"]
+[connection signal="pressed" from="AMB1_Button" to="." method="_on_amb_1_button_pressed"]
+[connection signal="pressed" from="AMB2_Button" to="." method="_on_amb_2_button_pressed"]
+[connection signal="pressed" from="AMB3_Button" to="." method="_on_amb_3_button_pressed"]
+[connection signal="pressed" from="BGMSilence_Button" to="." method="_on_bgm_silence_button_pressed"]
+[connection signal="pressed" from="BGM1_Button" to="." method="_on_bgm_1_button_pressed"]
+[connection signal="pressed" from="BGM2_Button" to="." method="_on_bgm_2_button_pressed"]
+[connection signal="pressed" from="BGM3_Button" to="." method="_on_bgm_3_button_pressed"]
+[connection signal="pressed" from="SFX1_Button" to="." method="_on_sfx_1_button_pressed"]
+[connection signal="pressed" from="SFX2_Button" to="." method="_on_sfx_2_button_pressed"]
+[connection signal="pressed" from="SFX3_Button" to="." method="_on_sfx_3_button_pressed"]

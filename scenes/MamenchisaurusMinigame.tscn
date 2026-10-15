@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://batph42wnmyg"]
+
+[ext_resource type="Script" uid="uid://c6205v768udtr" path="res://scripts/snap_zone.gd" id="1_1as00"]
+[ext_resource type="Texture2D" uid="uid://r87s2vfv01e2" path="res://assets/gfx/overworld/museum/bg_selection_screen.jpeg" id="2_0exv2"]
+[ext_resource type="Texture2D" uid="uid://dv7vob6ynw8t8" path="res://assets/gfx/placeholder_keith/IMG_0538.png" id="3_op1li"]
+[ext_resource type="Texture2D" uid="uid://cikmtnw3gbim6" path="res://assets/gfx/fossil_mg/mame/mame_legs_fossil.png" id="4_5ruax"]
+[ext_resource type="Script" uid="uid://dag4kkkre20yn" path="res://scripts/fossil_pieces.gd" id="5_n2eut"]
+[ext_resource type="Texture2D" uid="uid://8sqf0irw10sy" path="res://assets/gfx/fossil_mg/mame/mame_tail_fossil.png" id="6_mewnv"]
+[ext_resource type="Texture2D" uid="uid://dcawh50xdaal2" path="res://assets/gfx/fossil_mg/mame/mame_torso_fossil.png" id="7_5yq0e"]
+[ext_resource type="Texture2D" uid="uid://csh8r4vlrm1dh" path="res://assets/gfx/fossil_mg/mame/mame_arms_fossil.png" id="8_87lj2"]
+[ext_resource type="Texture2D" uid="uid://bl7qy4ftedeab" path="res://assets/gfx/fossil_mg/mame/mame_spine_fossil.png" id="9_sdubr"]
+[ext_resource type="Texture2D" uid="uid://dp6hb4w3shmfd" path="res://assets/gfx/fossil_mg/mame/mame_skull_fossil.png" id="10_6escw"]
+
+[node name="Node2D" type="Node2D" unique_id=1442685119]
+
+[node name="SnapZone" type="Node2D" parent="." unique_id=120955661]
+
+[node name="Head" type="Area2D" parent="SnapZone" unique_id=660381142 groups=["snap_zones"]]
+visible = false
+position = Vector2(814, 75)
+script = ExtResource("1_1as00")
+required_piece_id = "MHead"
+
+[node name="Body" type="Area2D" parent="SnapZone" unique_id=1721829885 groups=["snap_zones"]]
+position = Vector2(447, 314)
+script = ExtResource("1_1as00")
+required_piece_id = "MBody"
+
+[node name="Arms" type="Area2D" parent="SnapZone" unique_id=1993397414 groups=["snap_zones"]]
+position = Vector2(530, 370)
+script = ExtResource("1_1as00")
+required_piece_id = "MArms"
+
+[node name="Legs" type="Area2D" parent="SnapZone" unique_id=1772560711 groups=["snap_zones"]]
+position = Vector2(436, 345)
+script = ExtResource("1_1as00")
+required_piece_id = "MLegs"
+
+[node name="Spine" type="Area2D" parent="SnapZone" unique_id=706946923 groups=["snap_zones"]]
+position = Vector2(578, 89)
+script = ExtResource("1_1as00")
+required_piece_id = "MSpine"
+
+[node name="Tail" type="Area2D" parent="SnapZone" unique_id=396948770 groups=["snap_zones"]]
+position = Vector2(303, 337)
+script = ExtResource("1_1as00")
+required_piece_id = "MTail"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=987703667]
+position = Vector2(575.05, 322.53433)
+scale = Vector2(0.3015365, 0.30043116)
+texture = ExtResource("2_0exv2")
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=892586487]
+position = Vector2(583, 289)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_op1li")
+
+[node name="FossilPieces" type="Node2D" parent="." unique_id=922413811]
+
+[node name="MamenchisaurusLegs" type="TextureButton" parent="FossilPieces" unique_id=1296535683]
+offset_left = 309.0
+offset_top = 164.0
+offset_right = 619.0
+offset_bottom = 975.0
+scale = Vector2(0.19, 0.19)
+texture_normal = ExtResource("4_5ruax")
+script = ExtResource("5_n2eut")
+piece_id = "MLegs"
+
+[node name="MamenchisaurusTail" type="TextureButton" parent="FossilPieces" unique_id=732562702]
+offset_left = 75.0
+offset_top = 442.0
+offset_right = 1022.0
+offset_bottom = 981.0
+scale = Vector2(0.19, 0.19)
+texture_normal = ExtResource("6_mewnv")
+script = ExtResource("5_n2eut")
+piece_id = "MTail"
+
+[node name="MamenchisaurusBody" type="TextureButton" parent="FossilPieces" unique_id=844197257]
+offset_left = 773.0
+offset_top = 503.0
+offset_right = 1634.5554
+offset_bottom = 1144.0
+scale = Vector2(0.18, 0.18)
+texture_normal = ExtResource("7_5yq0e")
+stretch_mode = 0
+script = ExtResource("5_n2eut")
+piece_id = "MBody"
+
+[node name="MamenchisaurusArms" type="TextureButton" parent="FossilPieces" unique_id=585829252]
+offset_left = 937.0
+offset_top = 361.99997
+offset_right = 1716.0
+offset_bottom = 1229.0
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("8_87lj2")
+stretch_mode = 0
+script = ExtResource("5_n2eut")
+piece_id = "MArms"
+
+[node name="MamenchisaurusSpine" type="TextureButton" parent="FossilPieces" unique_id=424082729]
+offset_left = 44.0
+offset_top = 140.0
+offset_right = 1870.0742
+offset_bottom = 2295.5557
+scale = Vector2(0.135, 0.135)
+texture_normal = ExtResource("9_sdubr")
+stretch_mode = 0
+script = ExtResource("5_n2eut")
+piece_id = "MSpine"
+
+[node name="MamenchisaurusHead" type="TextureButton" parent="FossilPieces" unique_id=723776357]
+offset_left = 851.0
+offset_top = 299.0
+offset_right = 1119.5713
+offset_bottom = 521.85706
+scale = Vector2(0.175, 0.175)
+texture_normal = ExtResource("10_6escw")
+stretch_mode = 0
+script = ExtResource("5_n2eut")
+piece_id = "MHead"

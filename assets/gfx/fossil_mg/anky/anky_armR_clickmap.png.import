@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bi0rxg4qo3gm7"
+path="res://.godot/imported/anky_armR_clickmap.png-a73c35156f1644fd3d3500695c3e7bd6.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/anky/anky_armR_clickmap.png"
+dest_files=["res://.godot/imported/anky_armR_clickmap.png-a73c35156f1644fd3d3500695c3e7bd6.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dgl7c35u154m"
+path="res://.godot/imported/pter_torso_clickmap.png-50c6d5005124d0df2c2259b77259617b.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/pter/pter_torso_clickmap.png"
+dest_files=["res://.godot/imported/pter_torso_clickmap.png-50c6d5005124d0df2c2259b77259617b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

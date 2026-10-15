@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cl7xlh8cxp815"
+path="res://.godot/imported/pter_skull_clickmap.png-abc903cc7c690b0ca7d48ab443b40538.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/pter/pter_skull_clickmap.png"
+dest_files=["res://.godot/imported/pter_skull_clickmap.png-abc903cc7c690b0ca7d48ab443b40538.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

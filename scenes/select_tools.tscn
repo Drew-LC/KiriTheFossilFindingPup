@@ -1,0 +1,480 @@
+[gd_scene format=3 uid="uid://erdqxv7kww75"]
+
+[ext_resource type="Script" uid="uid://ce1g0vqnukaud" path="res://scripts/select_tools.gd" id="1_bqlr4"]
+[ext_resource type="Texture2D" uid="uid://dynmaaibq7psn" path="res://assets/gfx/fossil_mg/tools/ToolButton_NotSelected.png" id="2_74vdd"]
+[ext_resource type="Texture2D" uid="uid://d1v2bxn5l8qe7" path="res://assets/gfx/fossil_mg/tools/ToolButton_Selected.png" id="3_bqlr4"]
+[ext_resource type="Texture2D" uid="uid://dlj8wvhwt3xrp" path="res://assets/gfx/fossil_mg/tools/Tool_Paws.png" id="4_bqlr4"]
+[ext_resource type="Texture2D" uid="uid://d28kluhfb2xi0" path="res://assets/gfx/fossil_mg/tools/Tool_Pickaxe.png" id="5_dghey"]
+[ext_resource type="Texture2D" uid="uid://jaij2qfqp8r5" path="res://assets/gfx/fossil_mg/tools/Tool_Chisel.png" id="6_qwvfa"]
+[ext_resource type="Texture2D" uid="uid://b5kuviv0n7ftw" path="res://assets/gfx/fossil_mg/tools/Tool_Brush.png" id="7_r64nf"]
+[ext_resource type="Texture2D" uid="uid://brkb7nkbqgk7j" path="res://assets/gfx/UI/tutorial/tutorial_arrow.png" id="8_dghey"]
+[ext_resource type="Script" uid="uid://do0rjx73w7xqi" path="res://scripts/tutorial_digging.gd" id="8_lxqrs"]
+[ext_resource type="Texture2D" uid="uid://b3eg88yuuqqyn" path="res://assets/gfx/UI/tutorial/tutorial_mouseicon_pressed.png" id="9_r64nf"]
+[ext_resource type="Texture2D" uid="uid://ffpnrl8lr58c" path="res://assets/gfx/UI/tutorial/tutorial_mouseicon_unpressed.png" id="10_lxqrs"]
+[ext_resource type="Texture2D" uid="uid://bpw8p6528wrf1" path="res://assets/gfx/UI/tutorial/guide_arrow.png" id="11_v07qo"]
+[ext_resource type="Texture2D" uid="uid://bv5604mkfn8q4" path="res://assets/gfx/UI/tutorial/guide_outline.png" id="12_yojcb"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="14_v07qo"]
+[ext_resource type="Texture2D" uid="uid://cttwpwhd1ro66" path="res://assets/gfx/UI/kiri/Kiri_ExclaimationMark.png" id="15_ps1oy"]
+[ext_resource type="Texture2D" uid="uid://o7k2dk46fx61" path="res://assets/gfx/UI/kiri/Kiri_QuestionMark.png" id="16_7w40h"]
+[ext_resource type="Texture2D" uid="uid://bansjg0rmn1pi" path="res://assets/gfx/placeholder_mark/hint_button_normal.png" id="17_fwer3"]
+[ext_resource type="Texture2D" uid="uid://d8mnrpcqn0wb" path="res://assets/gfx/placeholder_mark/hint_button_hover.png" id="18_f3v3s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ps1oy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_r64nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lxqrs")
+}],
+"loop": true,
+"name": &"use_pickaxe",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_v07qo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialMouse:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialMouse:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(513, 259)]
+}
+
+[sub_resource type="Animation" id="Animation_ps1oy"]
+resource_name = "use_brush"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialMouse:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.65, 0.85, 1.05, 1.25, 1.45, 1.65, 1.85, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(255.00009, 181), Vector2(255.00009, 181), Vector2(126.000015, 237.99998), Vector2(315, 247.99998), Vector2(158.00005, 302), Vector2(348, 334), Vector2(147.00005, 385), Vector2(380, 398), Vector2(152.00005, 452), Vector2(386, 475), Vector2(256.00006, 541)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialMouse:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_yojcb"]
+resource_name = "use_chisel"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialMouse:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(195, 158.99998), Vector2(195, 158.99998), Vector2(195, 566), Vector2(195, 566)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialMouse:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_lxqrs"]
+resource_name = "use_paw"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialMouse:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialMouse:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(513, 259), Vector2(513, 259), Vector2(236.00009, 536), Vector2(236.00009, 536)]
+}
+
+[sub_resource type="Animation" id="Animation_7w40h"]
+resource_name = "use_pickaxe"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialMouse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(103, 323), Vector2(103, 323)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v07qo"]
+_data = {
+&"RESET": SubResource("Animation_v07qo"),
+&"use_brush": SubResource("Animation_ps1oy"),
+&"use_chisel": SubResource("Animation_yojcb"),
+&"use_paw": SubResource("Animation_lxqrs"),
+&"use_pickaxe": SubResource("Animation_7w40h")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwer3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ps1oy")
+}],
+"loop": true,
+"name": &"!",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_7w40h")
+}],
+"loop": true,
+"name": &"?",
+"speed": 5.0
+}]
+
+[node name="SelectTools" type="CanvasLayer" unique_id=1837066466]
+layer = 2
+visible = false
+script = ExtResource("1_bqlr4")
+
+[node name="Paw" type="TextureButton" parent="." unique_id=912460329 groups=["UI"]]
+offset_left = 1011.0
+offset_top = 38.0
+offset_right = 1279.0
+offset_bottom = 303.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("2_74vdd")
+texture_pressed = ExtResource("3_bqlr4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Paw" unique_id=2098668790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -81.5
+offset_right = 88.0
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_bqlr4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Paw" unique_id=1185703608]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2784314, 0.5176471, 0.16470589, 1)
+theme_override_fonts/font = ExtResource("14_v07qo")
+theme_override_font_sizes/font_size = 100
+text = "PAW"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pickaxe" type="TextureButton" parent="." unique_id=1038136532 groups=["UI"]]
+offset_left = 1011.0
+offset_top = 182.0
+offset_right = 1279.0
+offset_bottom = 447.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("2_74vdd")
+texture_pressed = ExtResource("3_bqlr4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Pickaxe" unique_id=2029832305]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.776184
+offset_top = -80.125
+offset_right = 82.776184
+offset_bottom = 80.125
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_dghey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Pickaxe" unique_id=1439709453]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2784314, 0.5176471, 0.16470589, 1)
+theme_override_fonts/font = ExtResource("14_v07qo")
+theme_override_font_sizes/font_size = 75
+text = "PICKAXE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chisel" type="TextureButton" parent="." unique_id=1870123571 groups=["UI"]]
+offset_left = 1011.0
+offset_top = 326.0
+offset_right = 1279.0
+offset_bottom = 591.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("2_74vdd")
+texture_pressed = ExtResource("3_bqlr4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Chisel" unique_id=681956197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.46621
+offset_top = -95.3125
+offset_right = 98.46621
+offset_bottom = 95.3125
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_qwvfa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Chisel" unique_id=41117138]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2784314, 0.5176471, 0.16470589, 1)
+theme_override_fonts/font = ExtResource("14_v07qo")
+theme_override_font_sizes/font_size = 90
+text = "CHISEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Brush" type="TextureButton" parent="." unique_id=2065498231 groups=["UI"]]
+offset_left = 1011.0
+offset_top = 470.0
+offset_right = 1279.0
+offset_bottom = 735.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("2_74vdd")
+texture_pressed = ExtResource("3_bqlr4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Brush" unique_id=365755730]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.46621
+offset_top = -95.3125
+offset_right = 98.46621
+offset_bottom = 95.3125
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_r64nf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Brush" unique_id=295490947]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2784314, 0.5176471, 0.16470589, 1)
+theme_override_fonts/font = ExtResource("14_v07qo")
+theme_override_font_sizes/font_size = 90
+text = "BRUSH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial" type="Control" parent="." unique_id=2126003387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_lxqrs")
+
+[node name="TutorialArrow" type="TextureRect" parent="Tutorial" unique_id=1844622929]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 876.00006
+offset_top = 65.999985
+offset_right = 1066.0
+offset_bottom = 165.99998
+scale = Vector2(0.6487225, 0.6487225)
+mouse_filter = 2
+texture = ExtResource("8_dghey")
+
+[node name="TutorialMouse" type="AnimatedSprite2D" parent="Tutorial" unique_id=431782797]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(513, 259)
+scale = Vector2(0.8532075, 0.85320747)
+sprite_frames = SubResource("SpriteFrames_ps1oy")
+animation = &"use_pickaxe"
+
+[node name="GuideArrow" type="TextureRect" parent="Tutorial" unique_id=96832905]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 147.0
+offset_top = 465.64996
+offset_right = 573.5975
+offset_bottom = 500.76086
+rotation = -0.7853982
+mouse_filter = 2
+texture = ExtResource("11_v07qo")
+expand_mode = 1
+
+[node name="GuideOutline" type="TextureRect" parent="Tutorial" unique_id=1103101625]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 123.0
+offset_top = 105.0
+offset_right = 535.00134
+offset_bottom = 112.0
+rotation = 1.5707964
+mouse_filter = 2
+texture = ExtResource("12_yojcb")
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=1681075813]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_v07qo")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" unique_id=1959640691]
+libraries/ = SubResource("AnimationLibrary_v07qo")
+
+[node name="Emotes" type="AnimatedSprite2D" parent="Tutorial" unique_id=1538713120]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+position = Vector2(576, 324)
+scale = Vector2(1.4014723, 1.4014724)
+sprite_frames = SubResource("SpriteFrames_fwer3")
+animation = &"?"
+
+[node name="Timer" type="Timer" parent="Tutorial" unique_id=291923943]
+wait_time = 5.0
+one_shot = true
+
+[node name="HintButton" type="TextureButton" parent="Tutorial" unique_id=424831036 groups=["UI"]]
+z_index = 1
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+offset_right = 130.0
+grow_vertical = 0
+texture_normal = ExtResource("17_fwer3")
+texture_hover = ExtResource("18_f3v3s")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="toggled" from="Paw" to="." method="_on_paw_toggled"]
+[connection signal="toggled" from="Pickaxe" to="." method="_on_pickaxe_toggled"]
+[connection signal="toggled" from="Chisel" to="." method="_on_chisel_toggled"]
+[connection signal="toggled" from="Brush" to="." method="_on_brush_toggled"]
+[connection signal="timeout" from="Tutorial/Timer" to="Tutorial" method="_on_timer_timeout"]
+[connection signal="pressed" from="Tutorial/HintButton" to="Tutorial" method="_on_hint_button_pressed"]

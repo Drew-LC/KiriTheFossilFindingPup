@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://nsaowwp13c6f"
+path="res://.godot/imported/pter_armR_clickmap.png-df07cc841da19535d44abde5b865daa9.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/pter/pter_armR_clickmap.png"
+dest_files=["res://.godot/imported/pter_armR_clickmap.png-df07cc841da19535d44abde5b865daa9.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

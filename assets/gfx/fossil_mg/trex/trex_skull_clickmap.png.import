@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dg1ug70l7yp6r"
+path="res://.godot/imported/trex_skull_clickmap.png-50f8bfc3bc2a1a22407603115725443f.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/trex/trex_skull_clickmap.png"
+dest_files=["res://.godot/imported/trex_skull_clickmap.png-50f8bfc3bc2a1a22407603115725443f.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

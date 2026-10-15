@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://c6p8ycj5ldiil"]
+
+[ext_resource type="PackedScene" uid="uid://d085unnqivpab" path="res://scenes/kiricharacter.tscn" id="1_81s3k"]
+[ext_resource type="Script" uid="uid://pkl2hh852t3h" path="res://scripts/kiri_home.gd" id="1_raqqt"]
+[ext_resource type="Texture2D" uid="uid://dsretvwb13okc" path="res://assets/gfx/overworld/kiriHome.png" id="1_ry0tb"]
+[ext_resource type="Shader" uid="uid://c8c46sr1iubpe" path="res://addons/lbg/godottools/dropshadow2d/advanced_blur.gdshader" id="3_dt8hm"]
+[ext_resource type="PackedScene" uid="uid://bapan2er85wre" path="res://scenes/door.tscn" id="4_pu546"]
+[ext_resource type="Texture2D" uid="uid://3na61o0ofius" path="res://assets/gfx/UI/minimap/Home_Radar.png" id="5_xew6s"]
+[ext_resource type="Shader" uid="uid://ljbnvis2pukf" path="res://shaders/shake.gdshader" id="6_v440c"]
+[ext_resource type="Texture2D" uid="uid://cjcg8pyv1g4bf" path="res://assets/gfx/overworld/LightOpening.png" id="7_xtv02"]
+[ext_resource type="Texture2D" uid="uid://dkccy2rt8oxxn" path="res://assets/gfx/placeholder_mark/dogBowlFurniture.png" id="9_43gg2"]
+[ext_resource type="Texture2D" uid="uid://bvc4c3l8lbmmg" path="res://assets/gfx/foreground/kbg.house.fore.png" id="9_yvejb"]
+[ext_resource type="Texture2D" uid="uid://crtiys5cpc1lq" path="res://assets/gfx/placeholder_mark/vaseFurniture.png" id="10_nhhop"]
+[ext_resource type="Texture2D" uid="uid://d2aaaak132gnr" path="res://assets/gfx/placeholder_mark/tennisFurniture.png" id="11_obu8l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43gg2"]
+shader = ExtResource("3_dt8hm")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_raqqt"]
+texture = ExtResource("1_ry0tb")
+texture_region_size = Vector2i(2000, 1500)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pu546"]
+tile_size = Vector2i(2000, 1500)
+sources/0 = SubResource("TileSetAtlasSource_raqqt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhhop"]
+shader = ExtResource("6_v440c")
+shader_parameter/amplitude = 0.50000002375
+shader_parameter/speed = 0.10000000475
+
+[node name="kirihomeScene" type="Node2D" unique_id=627811073]
+visibility_layer = 3
+script = ExtResource("1_raqqt")
+
+[node name="RadarMap" type="Sprite2D" parent="." unique_id=1819657123]
+visibility_layer = 2
+z_index = -10
+position = Vector2(-11.000004, 315)
+scale = Vector2(5.0219803, 5.0219803)
+texture = ExtResource("5_xew6s")
+
+[node name="Kiri" parent="." unique_id=66845406 instance=ExtResource("1_81s3k")]
+position = Vector2(-141, 1410)
+scale = Vector2(3, 3)
+
+[node name="animated_sprite_2d" parent="Kiri" index="0" unique_id=1661833244]
+z_index = 2
+z_as_relative = false
+
+[node name="DropShadow2D" parent="Kiri/animated_sprite_2d/Sprite2D" parent_id_path=PackedInt32Array(66845406, 165911319) index="0" unique_id=928541503]
+material = SubResource("ShaderMaterial_43gg2")
+position = Vector2(6.6666718, 14.134277)
+
+[node name="Camera2D" parent="Kiri" index="2" unique_id=1755670444]
+zoom = Vector2(0.25, 0.25)
+limit_left = -2700
+limit_top = -2800
+limit_right = 3000
+limit_bottom = 2500
+limit_smoothed = true
+
+[node name="TileMap" type="TileMap" parent="." unique_id=914782814]
+tile_set = SubResource("TileSet_pu546")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65538, 0, 0, 65534, 0, 2, 131070, 0, 3, -65537, 65536, 0, -1, 65536, 1, 65535, 65536, 2, 131071, 65536, 3, -131072, 131072, 0, -65536, 131072, 1, 0, 131072, 2, 65536, 131072, 3, -131071, 196608, 0, -65535, 196608, 1, 1, 196608, 2, 65537, 196608, 3, -2, 0, 1)
+
+[node name="Doors" type="Node" parent="." unique_id=1637487327]
+
+[node name="Light" type="TextureRect" parent="Doors" unique_id=888636460]
+z_index = 2
+material = SubResource("ShaderMaterial_nhhop")
+offset_left = -1094.0
+offset_top = 1571.0
+offset_right = 1265.0
+offset_bottom = 2393.0
+texture = ExtResource("7_xtv02")
+
+[node name="home_to_village" parent="Doors" unique_id=790956761 instance=ExtResource("4_pu546")]
+position = Vector2(-1049, 1760)
+scale = Vector2(19.343761, 6.9322824)
+destination_level_tag = "village"
+destination_door_tag = "door_to_home"
+spawn_direction = "down"
+check = true
+
+[node name="CollisionShape2D" parent="Doors/home_to_village" index="0" unique_id=1936581892]
+position = Vector2(56.504005, 68.5688)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Spawn" parent="Doors/home_to_village" index="1" unique_id=1085989013]
+position = Vector2(54.849728, -21.205137)
+
+[node name="collisionObj" type="StaticBody2D" parent="." unique_id=551902504]
+
+[node name="leftW" type="CollisionPolygon2D" parent="collisionObj" unique_id=1937143200]
+position = Vector2(8, 0)
+polygon = PackedVector2Array(-2099, 2244, -2086, -1575, 2260, -1600, 2317, -2629, -2300, -2616, -2588, 908, -2626, 1442)
+
+[node name="rightW" type="CollisionPolygon2D" parent="collisionObj" unique_id=10393526]
+polygon = PackedVector2Array(2248, 2282, 2229, -1588, 2360, -2585, 2894, 1598)
+
+[node name="entrance?" type="CollisionPolygon2D" parent="collisionObj" unique_id=432381861]
+polygon = PackedVector2Array(-2086, 2290, -188, 2316, 346, 2316, 1654, 2301, 2248, 2293, 2253, 2371, -1301, 2371, -2114, 2358)
+
+[node name="Decorations" type="Control" parent="." unique_id=1789429592]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="dogBowl" type="TextureRect" parent="Decorations" unique_id=613202926]
+visible = false
+layout_mode = 0
+offset_left = -1925.0
+offset_top = 1229.0
+offset_right = -609.0
+offset_bottom = 2545.0
+scale = Vector2(0.6124821, 0.6124821)
+texture = ExtResource("9_43gg2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="vase" type="TextureRect" parent="Decorations" unique_id=1297392551]
+visible = false
+layout_mode = 0
+offset_left = -2161.0
+offset_top = -832.0
+offset_right = -1161.0
+offset_bottom = 272.0
+scale = Vector2(0.71574247, 0.71574247)
+texture = ExtResource("10_nhhop")
+flip_h = true
+
+[node name="tennisBall" type="TextureRect" parent="Decorations" unique_id=1083434653]
+visible = false
+layout_mode = 0
+offset_left = 913.0
+offset_top = -559.0
+offset_right = 1865.0
+offset_bottom = -21.0
+texture = ExtResource("11_obu8l")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="foreground" type="Sprite2D" parent="." unique_id=40798619]
+visible = false
+z_index = 2
+texture = ExtResource("9_yvejb")
+
+[editable path="Kiri"]
+[editable path="Doors/home_to_village"]

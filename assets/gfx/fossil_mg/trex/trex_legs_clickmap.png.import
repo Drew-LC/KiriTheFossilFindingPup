@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dyfjqqn4t6tf4"
+path="res://.godot/imported/trex_legs_clickmap.png-69a3908f55e7d9ec2d8e5ec71656bf47.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/trex/trex_legs_clickmap.png"
+dest_files=["res://.godot/imported/trex_legs_clickmap.png-69a3908f55e7d9ec2d8e5ec71656bf47.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

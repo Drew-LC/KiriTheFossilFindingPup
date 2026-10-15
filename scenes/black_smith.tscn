@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://dlq10p1oicgyu"]
+
+[ext_resource type="Texture2D" uid="uid://k2rtipq3ekkb" path="res://assets/gfx/overworld/kiribg.blacksmithint.png" id="1_7wfd2"]
+[ext_resource type="Script" uid="uid://ciwl5pmtcb81n" path="res://scripts/black_smith.gd" id="1_xm881"]
+[ext_resource type="PackedScene" uid="uid://d085unnqivpab" path="res://scenes/kiricharacter.tscn" id="2_xm881"]
+[ext_resource type="Texture2D" uid="uid://cw6bxlfmpbbyg" path="res://assets/gfx/UI/minimap/Blacksmith_Radar.png" id="3_2ut2o"]
+[ext_resource type="Shader" uid="uid://c8c46sr1iubpe" path="res://addons/lbg/godottools/dropshadow2d/advanced_blur.gdshader" id="4_33jg3"]
+[ext_resource type="PackedScene" uid="uid://bapan2er85wre" path="res://scenes/door.tscn" id="4_vj5xj"]
+[ext_resource type="PackedScene" uid="uid://cfce8w2yxerkf" path="res://scenes/shop_location.tscn" id="5_j0ae4"]
+[ext_resource type="Shader" uid="uid://ljbnvis2pukf" path="res://shaders/shake.gdshader" id="6_42mnn"]
+[ext_resource type="Texture2D" uid="uid://cjcg8pyv1g4bf" path="res://assets/gfx/overworld/LightOpening.png" id="7_t0uqg"]
+[ext_resource type="Texture2D" uid="uid://i4yyu5iltero" path="res://assets/gfx/foreground/blacksmith.fore.png" id="10_t0uqg"]
+[ext_resource type="SpriteFrames" uid="uid://dybccdhp1on5m" path="res://assets/styles/shopKeeperBlue.tres" id="11_cxvo2"]
+[ext_resource type="Texture2D" uid="uid://db0836hdnogjj" path="res://assets/gfx/shop_cat/shopcat1.png" id="12_fw2d0"]
+[ext_resource type="Script" uid="uid://b6mesw7eofkt6" path="res://addons/lbg/godottools/dropshadow2d/drop_shadow_2d.gd" id="13_am6w5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fw2d0"]
+shader = ExtResource("4_33jg3")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fcxy"]
+texture = ExtResource("1_7wfd2")
+texture_region_size = Vector2i(1400, 1800)
+use_texture_padding = false
+0:0/size_in_atlas = Vector2i(5, 5)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w5ilf"]
+tile_size = Vector2i(1400, 1800)
+sources/2 = SubResource("TileSetAtlasSource_6fcxy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_am6w5"]
+shader = ExtResource("4_33jg3")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xupal"]
+shader = ExtResource("6_42mnn")
+shader_parameter/amplitude = 0.50000002375
+shader_parameter/speed = 0.10000000475
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj5xj"]
+size = Vector2(21.462296, 22.870842)
+
+[sub_resource type="GDScript" id="GDScript_j0ae4"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vj5xj"]
+
+[node name="blacksmith" type="Node2D" unique_id=1053411779]
+visibility_layer = 3
+script = ExtResource("1_xm881")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195697425]
+z_index = 2
+position = Vector2(4205, 1987)
+scale = Vector2(0.2058, 0.2058)
+sprite_frames = ExtResource("11_cxvo2")
+autoplay = "default"
+frame_progress = 0.6692881
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D" unique_id=922386987]
+texture = ExtResource("12_fw2d0")
+
+[node name="DropShadow2D" type="Sprite2D" parent="AnimatedSprite2D/Sprite2D" unique_id=1721643430]
+modulate = Color(1, 1, 1, 0.45)
+z_index = -1
+material = SubResource("ShaderMaterial_fw2d0")
+position = Vector2(-29.154297, 48.59082)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("12_fw2d0")
+script = ExtResource("13_am6w5")
+distance = Vector2(-6, 10)
+shadow_scale = 1.02
+metadata/_custom_type_script = "uid://b6mesw7eofkt6"
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288231048]
+tile_set = SubResource("TileSet_w5ilf")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 2, 0)
+
+[node name="RadarMap" type="Sprite2D" parent="." unique_id=2025520211]
+visibility_layer = 2
+z_index = -10
+position = Vector2(3477, 5118)
+scale = Vector2(8.087878, 8.087878)
+texture = ExtResource("3_2ut2o")
+
+[node name="Kiri" parent="." unique_id=239720876 instance=ExtResource("2_xm881")]
+z_index = 2
+position = Vector2(4875, 7110)
+scale = Vector2(3, 3)
+
+[node name="DropShadow2D" parent="Kiri/animated_sprite_2d/Sprite2D" parent_id_path=PackedInt32Array(239720876, 165911319) index="0" unique_id=928541503]
+material = SubResource("ShaderMaterial_am6w5")
+position = Vector2(6.666992, 14.133789)
+
+[node name="Camera2D" parent="Kiri" index="2" unique_id=1755670444]
+zoom = Vector2(0.25, 0.25)
+limit_left = 0
+limit_top = 400
+limit_right = 7000
+limit_bottom = 7900
+
+[node name="Doors" type="Node" parent="." unique_id=1164701731]
+
+[node name="Light" type="TextureRect" parent="Doors" unique_id=656552489]
+z_index = 2
+material = SubResource("ShaderMaterial_xupal")
+offset_left = 3584.0
+offset_top = 7092.0
+offset_right = 5943.0
+offset_bottom = 7914.0
+texture = ExtResource("7_t0uqg")
+
+[node name="blacksmithEntrance" parent="Doors" unique_id=790956761 instance=ExtResource("4_vj5xj")]
+position = Vector2(4777, 7556)
+destination_level_tag = "village"
+destination_door_tag = "door_to_blacksmith"
+spawn_direction = "down"
+check = true
+
+[node name="CollisionShape2D" parent="Doors/blacksmithEntrance" index="0" unique_id=1936581892]
+position = Vector2(-29.39795, 228.2417)
+rotation = 3.1415925
+scale = Vector2(74.67961, -3.8688278)
+shape = SubResource("RectangleShape2D_vj5xj")
+script = SubResource("GDScript_j0ae4")
+
+[node name="Spawn" parent="Doors/blacksmithEntrance" index="1" unique_id=1085989013]
+position = Vector2(-34, -107)
+scale = Vector2(10.76, 2.1199903)
+
+[node name="collisionObj" type="StaticBody2D" parent="." unique_id=1422322743]
+
+[node name="leftSide" type="CollisionPolygon2D" parent="collisionObj" unique_id=1356854904]
+position = Vector2(6, 0)
+polygon = PackedVector2Array(954, 7870, 1031, 6324, 1056, 5923, 1094, 5911, 2416, 5873, 2808, 5869, 2877, 5846, 2898, 5505, 3003, 4396, 3038, 4364, 3161, 4354, 3237, 4354, 3231, 3959, 3259, 3517, 3283, 3168, 3249, 3104, 3130, 2954, 3240, 1822, 3297, 1786, 4890, 1768, 5630, 1752, 5954, 1761, 5909, 528, 19, 557, 13, 7936)
+
+[node name="rightSide" type="CollisionPolygon2D" parent="collisionObj" unique_id=488912548]
+polygon = PackedVector2Array(5991, 7812, 5983, 7073, 5977, 6046, 5987, 5127, 5969, 4679, 5956, 4350, 5879, 4338, 5836, 4337, 5807, 4357, 5786, 4245, 5749, 3946, 5742, 3747, 5762, 3597, 5768, 3422, 5775, 3311, 5803, 3145, 5929, 2983, 5956, 2945, 5956, 2448, 5969, 2219, 5958, 1904, 5958, 1770, 6768, 1737, 6690, 7870)
+
+[node name="entrance" type="CollisionShape2D" parent="collisionObj" unique_id=1205997071]
+position = Vector2(4460, 7837)
+shape = SubResource("WorldBoundaryShape2D_vj5xj")
+
+[node name="redGem1" type="CollisionPolygon2D" parent="collisionObj" unique_id=1756169861]
+position = Vector2(12, 0)
+polygon = PackedVector2Array(2970, 5736, 2974, 5839, 3020, 5916, 3098, 6016, 3256, 6051, 3358, 5982, 3447, 5864, 3479, 5726, 3453, 5622, 3417, 5542, 3039, 5581, 2989, 5679)
+
+[node name="redGem2" type="CollisionPolygon2D" parent="collisionObj" unique_id=2014473054]
+polygon = PackedVector2Array(5447, 5529, 5409, 5608, 5375, 5688, 5380, 5764, 5409, 5934, 5440, 6002, 5520, 6079, 5684, 6109, 5794, 6060, 5894, 5948, 5943, 5845, 5957, 5710, 5936, 5620, 5912, 5552)
+
+[node name="pot1" type="CollisionPolygon2D" parent="collisionObj" unique_id=258405607]
+polygon = PackedVector2Array(4070, 5155, 4106, 5300, 4125, 5372, 4151, 5402, 4203, 5417, 4292, 5417, 4341, 5395, 4369, 5365, 4394, 5349, 4414, 5171, 4415, 5127, 4411, 5094, 4398, 5059, 4067, 5071, 4051, 5097, 4055, 5124)
+
+[node name="pot2" type="CollisionPolygon2D" parent="collisionObj" unique_id=1990776160]
+polygon = PackedVector2Array(4487, 5072, 4482, 5113, 4491, 5191, 4504, 5283, 4522, 5350, 4549, 5375, 4611, 5388, 4678, 5393, 4749, 5379, 4764, 5349, 4791, 5297, 4834, 5183, 4846, 5120, 4847, 5086, 4822, 5057)
+
+[node name="greenGem" type="CollisionPolygon2D" parent="collisionObj" unique_id=1378082893]
+polygon = PackedVector2Array(3291, 2086, 3303, 2016, 3365, 1939, 3418, 1916, 3479, 1915, 3531, 1929, 3576, 1964, 3627, 2028, 3649, 2083, 3656, 2154, 3643, 2241, 3602, 2320, 3526, 2384, 3444, 2385, 3374, 2341, 3322, 2298, 3294, 2225, 3283, 2146)
+
+[node name="greenGem2" type="CollisionPolygon2D" parent="collisionObj" unique_id=1423192078]
+polygon = PackedVector2Array(5519, 2004, 5578, 1923, 5631, 1901, 5674, 1889, 5723, 1892, 5779, 1920, 5832, 1968, 5855, 2019, 5876, 2098, 5883, 2179, 5865, 2228, 5823, 2301, 5786, 2333, 5736, 2363, 5647, 2350, 5577, 2320, 5538, 2270, 5520, 2211, 5510, 2138, 5504, 2082)
+
+[node name="mainTable" type="StaticBody2D" parent="collisionObj" unique_id=1026016740]
+
+[node name="bl" type="CollisionPolygon2D" parent="collisionObj/mainTable" unique_id=1728102332]
+polygon = PackedVector2Array(4006, 4953, 4024.2007, 5020.0186, 4040, 5074, 4059, 5153, 4092, 5151, 4094, 5077, 4094, 5026, 4088, 4952)
+
+[node name="tl" type="CollisionPolygon2D" parent="collisionObj/mainTable" unique_id=1168686125]
+position = Vector2(139, -2255)
+polygon = PackedVector2Array(4006, 4953, 4024.2007, 5020.0186, 4040, 5074, 4059, 5153, 4092, 5151, 4094, 5077, 4094, 5026, 4088, 4952)
+
+[node name="br" type="CollisionPolygon2D" parent="collisionObj/mainTable" unique_id=851674963]
+polygon = PackedVector2Array(4809, 4972, 4807, 5041, 4805, 5115, 4810, 5144, 4839, 5143, 4851, 5075, 4858, 5040, 4874, 4983, 4880, 4969)
+
+[node name="tb" type="CollisionPolygon2D" parent="collisionObj/mainTable" unique_id=412631305]
+position = Vector2(55, -2291)
+polygon = PackedVector2Array(4809, 4972, 4807, 5041, 4805, 5115, 4810, 5144, 4839, 5143, 4851, 5075, 4858, 5040, 4874, 4983, 4880, 4969)
+
+[node name="sideTable" type="StaticBody2D" parent="collisionObj" unique_id=667345767]
+
+[node name="bl" type="CollisionPolygon2D" parent="collisionObj/sideTable" unique_id=1503992701]
+polygon = PackedVector2Array(1437, 7085, 1464, 7161, 1502, 7266, 1516, 7277, 1528, 7281, 1540, 7280, 1545, 7270, 1547, 7257, 1531, 7210, 1500, 7117, 1488, 7078)
+
+[node name="tl" type="CollisionPolygon2D" parent="collisionObj/sideTable" unique_id=1208105314]
+position = Vector2(37, -713)
+polygon = PackedVector2Array(1437, 7085, 1464, 7161, 1502, 7266, 1516, 7277, 1528, 7281, 1540, 7280, 1545, 7270, 1547, 7257, 1531, 7210, 1500, 7117, 1488, 7078)
+
+[node name="br" type="CollisionPolygon2D" parent="collisionObj/sideTable" unique_id=623735906]
+polygon = PackedVector2Array(2718, 7049, 2717, 7086, 2714, 7158, 2714, 7198, 2720, 7211, 2733, 7214, 2738, 7214, 2749, 7209, 2755, 7193, 2759, 7124, 2760, 7088, 2765, 7046, 2765, 7038, 2719, 7040)
+
+[node name="tr" type="CollisionPolygon2D" parent="collisionObj/sideTable" unique_id=1398279165]
+position = Vector2(-3860, -2706)
+polygon = PackedVector2Array(2718, 7049, 2717, 7086, 2714, 7158, 2714, 7198, 2720, 7211, 2733, 7214, 2738, 7214, 2749, 7209, 2755, 7193, 2759, 7124, 2760, 7088, 2765, 7046, 2765, 7038, 2719, 7040)
+
+[node name="Shop" parent="." unique_id=947831357 instance=ExtResource("5_j0ae4")]
+position = Vector2(4416, 1874)
+
+[node name="CollisionShape2D" parent="Shop" index="0" unique_id=1801846183]
+position = Vector2(-164, 172.5)
+
+[node name="foreground" type="Sprite2D" parent="." unique_id=244462569]
+z_index = 3
+z_as_relative = false
+position = Vector2(3500, 4500)
+texture = ExtResource("10_t0uqg")
+
+[editable path="Kiri"]
+[editable path="Doors/blacksmithEntrance"]
+[editable path="Shop"]

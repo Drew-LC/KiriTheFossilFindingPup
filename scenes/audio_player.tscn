@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://dsecujqiwkrka"]
+
+[ext_resource type="Script" uid="uid://cyhafer40xcw3" path="res://scripts/audio_player.gd" id="1_qbjj0"]
+[ext_resource type="AudioStream" uid="uid://c65oda2v8dq80" path="res://assets/sfx/ambience/ambience_silence.ogg" id="2_ffhcf"]
+[ext_resource type="AudioStream" uid="uid://bvcyta3x4gwwh" path="res://assets/sfx/music/music_silence.ogg" id="6_fmexy"]
+[ext_resource type="AudioStream" uid="uid://cobw5yvvkwsrs" path="res://assets/sfx/music/sandy_beach.ogg" id="7_wiaen"]
+[ext_resource type="AudioStream" uid="uid://b0k5piacvrm4h" path="res://assets/sfx/music/video_reward.ogg" id="8_107af"]
+[ext_resource type="AudioStream" uid="uid://cuhsvhxa2x1ca" path="res://assets/sfx/music/village.ogg" id="10_lpsqn"]
+[ext_resource type="AudioStream" uid="uid://gopypkap8eda" path="res://assets/sfx/music/cave.ogg" id="11_ddj1p"]
+[ext_resource type="AudioStream" uid="uid://svp0qpp13tm0" path="res://assets/sfx/music/indoor.ogg" id="12_jjlgm"]
+[ext_resource type="AudioStream" uid="uid://b5r2gvm2mcb6g" path="res://assets/sfx/soundeffects/failed_1.ogg" id="12_p65hj"]
+[ext_resource type="AudioStream" uid="uid://cj6u6wqoboluq" path="res://assets/sfx/soundeffects/found_spot.ogg" id="13_d67ob"]
+[ext_resource type="AudioStream" uid="uid://dsyjfmfiyy2l5" path="res://assets/sfx/soundeffects/button_hover.wav" id="13_m7vm7"]
+[ext_resource type="AudioStream" uid="uid://cxybg1xmhi62i" path="res://assets/sfx/soundeffects/kiri_sniff.ogg" id="14_046st"]
+[ext_resource type="AudioStream" uid="uid://b4b1dl5b0dqp5" path="res://assets/sfx/soundeffects/wrong_input.mp3" id="14_mt4ah"]
+[ext_resource type="AudioStream" uid="uid://b2wxlky8nc2f0" path="res://assets/sfx/soundeffects/kiri_walk.ogg" id="15_w38la"]
+[ext_resource type="AudioStream" uid="uid://bhcf3x57iw3st" path="res://assets/sfx/soundeffects/kiri_sprint.ogg" id="16_046st"]
+[ext_resource type="AudioStream" uid="uid://mi14hhscjauh" path="res://assets/sfx/soundeffects/tool_brush.ogg" id="16_p8wwp"]
+[ext_resource type="AudioStream" uid="uid://cihelhlxy6k1p" path="res://assets/sfx/soundeffects/tool_paw.ogg" id="17_7r3y4"]
+[ext_resource type="AudioStream" uid="uid://c4he0078satc2" path="res://assets/sfx/soundeffects/dog_barking.mp3" id="18_ddj1p"]
+[ext_resource type="AudioStream" uid="uid://dem2pjc7q66n" path="res://assets/sfx/soundeffects/tool_chisel.ogg" id="18_w38la"]
+[ext_resource type="AudioStream" uid="uid://bfrxl4xuc5ept" path="res://assets/sfx/soundeffects/tool_pickaxe.ogg" id="18_yljjf"]
+[ext_resource type="AudioStream" uid="uid://dmre1o0vn583h" path="res://assets/sfx/soundeffects/transition.ogg" id="19_brjrl"]
+[ext_resource type="AudioStream" uid="uid://cybtxtixl1wwf" path="res://assets/sfx/soundeffects/victory_1.ogg" id="20_aoyxk"]
+[ext_resource type="AudioStream" uid="uid://duqbywwjo0hhv" path="res://assets/sfx/soundeffects/victory_2.ogg" id="21_01uri"]
+[ext_resource type="AudioStream" uid="uid://demuhnn7ttoix" path="res://assets/sfx/soundeffects/meow.ogg" id="22_d67ob"]
+[ext_resource type="AudioStream" uid="uid://dgi0wsmdt7jkb" path="res://assets/sfx/soundeffects/oo-ee-a-ea.mp3" id="24_w38la"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_qbjj0"]
+clip_count = 1
+clip_0/name = &"Silence"
+clip_0/stream = ExtResource("2_ffhcf")
+clip_0/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+}
+}
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_mfaxx"]
+clip_count = 6
+clip_0/name = &"Silence"
+clip_0/stream = ExtResource("6_fmexy")
+clip_0/auto_advance = 0
+clip_1/name = &"Village"
+clip_1/stream = ExtResource("10_lpsqn")
+clip_1/auto_advance = 0
+clip_2/name = &"Cave"
+clip_2/stream = ExtResource("11_ddj1p")
+clip_2/auto_advance = 0
+clip_3/name = &"Indoor"
+clip_3/stream = ExtResource("12_jjlgm")
+clip_3/auto_advance = 0
+clip_4/name = &"Beach"
+clip_4/stream = ExtResource("7_wiaen")
+clip_4/auto_advance = 0
+clip_5/name = &"VideoReward"
+clip_5/stream = ExtResource("8_107af")
+clip_5/auto_advance = 0
+_transitions = {
+Vector2i(-1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+},
+Vector2i(-1, 1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+},
+Vector2i(-1, 2): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+},
+Vector2i(-1, 3): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+},
+Vector2i(-1, 4): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 2
+},
+Vector2i(-1, 5): {
+"fade_beats": 1.0,
+"fade_mode": 1,
+"from_time": 0,
+"to_time": 1
+}
+}
+
+[node name="AudioPlayer" type="Node" unique_id=733085136]
+script = ExtResource("1_qbjj0")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=119776948]
+stream = SubResource("AudioStreamInteractive_qbjj0")
+bus = &"Ambience"
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=734282261]
+stream = SubResource("AudioStreamInteractive_mfaxx")
+autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="Node" parent="." unique_id=548835201]
+
+[node name="hover_button" type="AudioStreamPlayer" parent="SFX" unique_id=1819151290]
+stream = ExtResource("13_m7vm7")
+volume_db = 14.0
+
+[node name="invalid_input" type="AudioStreamPlayer" parent="SFX" unique_id=1225852912]
+stream = ExtResource("14_mt4ah")
+volume_db = 5.0
+
+[node name="dog_bark" type="AudioStreamPlayer" parent="SFX" unique_id=874958472]
+stream = ExtResource("18_ddj1p")
+
+[node name="failed_1" type="AudioStreamPlayer" parent="SFX" unique_id=434823301]
+stream = ExtResource("12_p65hj")
+
+[node name="found_spot" type="AudioStreamPlayer" parent="SFX" unique_id=2011157527]
+stream = ExtResource("13_d67ob")
+
+[node name="kiri_sniff" type="AudioStreamPlayer" parent="SFX" unique_id=851896866]
+stream = ExtResource("14_046st")
+
+[node name="kiri_walk" type="AudioStreamPlayer" parent="SFX" unique_id=1670171210]
+stream = ExtResource("15_w38la")
+
+[node name="kiri_sprint" type="AudioStreamPlayer" parent="SFX" unique_id=1353703574]
+stream = ExtResource("16_046st")
+
+[node name="tool_brush" type="AudioStreamPlayer" parent="SFX" unique_id=438272306]
+stream = ExtResource("16_p8wwp")
+
+[node name="tool_chisel" type="AudioStreamPlayer" parent="SFX" unique_id=2108790303]
+stream = ExtResource("18_w38la")
+
+[node name="tool_paw" type="AudioStreamPlayer" parent="SFX" unique_id=1371870196]
+stream = ExtResource("17_7r3y4")
+
+[node name="tool_pickaxe" type="AudioStreamPlayer" parent="SFX" unique_id=304145118]
+stream = ExtResource("18_yljjf")
+
+[node name="transition" type="AudioStreamPlayer" parent="SFX" unique_id=1591996809]
+stream = ExtResource("19_brjrl")
+
+[node name="victory_1" type="AudioStreamPlayer" parent="SFX" unique_id=1503479806]
+stream = ExtResource("20_aoyxk")
+
+[node name="victory_2" type="AudioStreamPlayer" parent="SFX" unique_id=1615522312]
+stream = ExtResource("21_01uri")
+
+[node name="meow" type="AudioStreamPlayer" parent="SFX" unique_id=2023599968]
+stream = ExtResource("22_d67ob")
+
+[node name="easterEgg" type="AudioStreamPlayer" parent="SFX" unique_id=1235844426]
+stream = ExtResource("24_w38la")
+parameters/looping = true

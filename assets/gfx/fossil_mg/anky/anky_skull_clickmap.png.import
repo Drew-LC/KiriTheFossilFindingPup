@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b7tkgevxeg4f4"
+path="res://.godot/imported/anky_skull_clickmap.png-4858009f1a3f8341047d96d4c90429c5.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/anky/anky_skull_clickmap.png"
+dest_files=["res://.godot/imported/anky_skull_clickmap.png-4858009f1a3f8341047d96d4c90429c5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

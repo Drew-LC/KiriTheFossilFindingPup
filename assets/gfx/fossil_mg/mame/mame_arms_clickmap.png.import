@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dr0887py3it8a"
+path="res://.godot/imported/mame_arms_clickmap.png-40911045a3a228a5f98a73e3c138438e.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/mame/mame_arms_clickmap.png"
+dest_files=["res://.godot/imported/mame_arms_clickmap.png-40911045a3a228a5f98a73e3c138438e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

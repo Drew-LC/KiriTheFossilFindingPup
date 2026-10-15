@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dlu5rx63nb53q"
+path="res://.godot/imported/gem_clickmap.png-8a6da12871a5eb791cd6b2bb277a42d8.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/gem/gem_clickmap.png"
+dest_files=["res://.godot/imported/gem_clickmap.png-8a6da12871a5eb791cd6b2bb277a42d8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cbrje7vc5emtq"]
+
+[ext_resource type="Script" uid="uid://c6205v768udtr" path="res://scripts/snap_zone.gd" id="1_r86wn"]
+[ext_resource type="Texture2D" uid="uid://r87s2vfv01e2" path="res://assets/gfx/overworld/museum/bg_selection_screen.jpeg" id="2_o4nr2"]
+[ext_resource type="Texture2D" uid="uid://c5hwd5nify72f" path="res://assets/gfx/placeholder_keith/IMG_0667 (1).png" id="3_533aa"]
+[ext_resource type="Texture2D" uid="uid://c4egi6akmd1xn" path="res://assets/gfx/fossil_mg/pter/pter_skull_fossil.png" id="4_fdcx7"]
+[ext_resource type="Script" uid="uid://dag4kkkre20yn" path="res://scripts/fossil_pieces.gd" id="5_43ocu"]
+[ext_resource type="Texture2D" uid="uid://dx3akpi7hvc6p" path="res://assets/gfx/fossil_mg/pter/pter_torso_fossil.png" id="6_16yld"]
+[ext_resource type="Texture2D" uid="uid://c01o70yoamock" path="res://assets/gfx/fossil_mg/pter/pter_legs_fossil.png" id="7_8rcv0"]
+[ext_resource type="Texture2D" uid="uid://nluh15jkmdjt" path="res://assets/gfx/fossil_mg/pter/pter_armR_fossil.png" id="8_yqc0p"]
+[ext_resource type="BitMap" uid="uid://nsaowwp13c6f" path="res://assets/gfx/fossil_mg/pter/pter_armR_clickmap.png" id="9_o7fvm"]
+[ext_resource type="Texture2D" uid="uid://cj281vaopmere" path="res://assets/gfx/fossil_mg/pter/pter_armL_fossil.png" id="10_8ph64"]
+
+[node name="Node2D" type="Node2D" unique_id=1163985380]
+
+[node name="SnapZone" type="Node2D" parent="." unique_id=1718319205]
+
+[node name="Head" type="Area2D" parent="SnapZone" unique_id=205988853 groups=["snap_zones"]]
+position = Vector2(445, 171)
+script = ExtResource("1_r86wn")
+required_piece_id = "THead"
+
+[node name="Body" type="Area2D" parent="SnapZone" unique_id=2136769860 groups=["snap_zones"]]
+position = Vector2(528, 289)
+script = ExtResource("1_r86wn")
+required_piece_id = "TBody"
+
+[node name="Legs" type="Area2D" parent="SnapZone" unique_id=1540765976 groups=["snap_zones"]]
+position = Vector2(529, 347)
+script = ExtResource("1_r86wn")
+required_piece_id = "TLegs"
+
+[node name="RightWing" type="Area2D" parent="SnapZone" unique_id=166024255 groups=["snap_zones"]]
+position = Vector2(159, 261)
+script = ExtResource("1_r86wn")
+required_piece_id = "TRightWing"
+
+[node name="LeftWing" type="Area2D" parent="SnapZone" unique_id=1202084903 groups=["snap_zones"]]
+position = Vector2(545, 258)
+script = ExtResource("1_r86wn")
+required_piece_id = "TLeftWing"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=509407886]
+position = Vector2(575.05, 322.53433)
+scale = Vector2(0.3015365, 0.30043116)
+texture = ExtResource("2_o4nr2")
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=574524145]
+position = Vector2(581.00006, 311)
+scale = Vector2(0.32935727, 0.29305556)
+texture = ExtResource("3_533aa")
+
+[node name="FossilPieces" type="Node2D" parent="." unique_id=529113139]
+
+[node name="Head" type="TextureButton" parent="FossilPieces" unique_id=75175858]
+offset_left = 263.0
+offset_top = 392.0
+offset_right = 1222.091
+offset_bottom = 955.63635
+scale = Vector2(0.22, 0.22)
+texture_normal = ExtResource("4_fdcx7")
+stretch_mode = 4
+script = ExtResource("5_43ocu")
+piece_id = "THead"
+
+[node name="Body" type="TextureButton" parent="FossilPieces" unique_id=363383196]
+offset_left = 809.0
+offset_top = 383.0
+offset_right = 901.0
+offset_bottom = 566.0
+scale = Vector2(0.415, 0.415)
+texture_normal = ExtResource("6_16yld")
+stretch_mode = 4
+script = ExtResource("5_43ocu")
+piece_id = "TBody"
+
+[node name="Legs" type="TextureButton" parent="FossilPieces" unique_id=1005409214]
+offset_left = 864.0
+offset_top = 87.0
+offset_right = 1077.0
+offset_bottom = 404.0
+scale = Vector2(0.28, 0.28)
+texture_normal = ExtResource("7_8rcv0")
+stretch_mode = 4
+script = ExtResource("5_43ocu")
+piece_id = "TLegs"
+
+[node name="RightWing" type="TextureButton" parent="FossilPieces" unique_id=481673796]
+offset_left = 678.0
+offset_top = 513.0
+offset_right = 2276.6665
+offset_bottom = 711.0
+scale = Vector2(0.24, 0.24)
+texture_normal = ExtResource("8_yqc0p")
+texture_click_mask = ExtResource("9_o7fvm")
+stretch_mode = 0
+script = ExtResource("5_43ocu")
+piece_id = "TRightWing"
+
+[node name="LeftWing" type="TextureButton" parent="FossilPieces" unique_id=732067246]
+offset_left = 76.00003
+offset_top = 97.000046
+offset_right = 1859.333
+offset_bottom = 308.00006
+scale = Vector2(0.24, 0.24)
+texture_normal = ExtResource("10_8ph64")
+stretch_mode = 0
+script = ExtResource("5_43ocu")
+piece_id = "TLeftWing"

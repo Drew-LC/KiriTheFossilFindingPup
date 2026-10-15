@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://04yw3i1fj5wn"]
+
+[ext_resource type="Texture2D" uid="uid://sabyycebaku6" path="res://assets/gfx/placeholder_keith/chisel.png" id="1_8vh4q"]
+[ext_resource type="Script" uid="uid://bf2pcap3mf260" path="res://scripts/player.gd" id="1_qbjnn"]
+[ext_resource type="PackedScene" uid="uid://uywxfopvnnvw" path="res://scenes/inventory_canvas_layer.tscn" id="2_hss0p"]
+[ext_resource type="Script" uid="uid://dseynuka8yqkk" path="res://scripts/pickup_item.gd" id="4_hss0p"]
+[ext_resource type="Script" uid="uid://dgwxq6p06cn0l" path="res://scripts/item_data.gd" id="5_nacte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ref04"]
+size = Vector2(50, 47.5)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qbjnn"]
+
+[sub_resource type="Resource" id="Resource_ss1m7"]
+script = ExtResource("5_nacte")
+item_name = "chisel"
+description = "Can pierce flesh"
+icon = ExtResource("1_8vh4q")
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vh4q"]
+size = Vector2(143.67352, 118.57114)
+
+[node name="World" type="ColorRect" unique_id=2099769467]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -34.0
+offset_right = -31.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.8766528, 1, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1628777648]
+position = Vector2(29, 231)
+script = ExtResource("1_qbjnn")
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=200492263]
+offset_left = 125.0
+offset_top = 130.0
+offset_right = 165.0
+offset_bottom = 170.0
+scale = Vector2(1.2839999, 1.2065829)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=212979455]
+position = Vector2(151.00002, 154.25)
+shape = SubResource("RectangleShape2D_ref04")
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1936509149]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.9912583, 0.6459291, 1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor" unique_id=1750770979]
+position = Vector2(0, -618)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D" unique_id=780517480]
+position = Vector2(190, 619)
+shape = SubResource("WorldBoundaryShape2D_qbjnn")
+
+[node name="CanvasLayer" parent="." unique_id=627654601 instance=ExtResource("2_hss0p")]
+
+[node name="item" type="Area2D" parent="." unique_id=739406787]
+position = Vector2(314, 203)
+scale = Vector2(0.99456096, 1.0046408)
+script = ExtResource("4_hss0p")
+item_data = SubResource("Resource_ss1m7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item" unique_id=1010579069]
+position = Vector2(235.8367, 343.96442)
+scale = Vector2(0.9999999, 0.9999998)
+shape = SubResource("RectangleShape2D_8vh4q")
+
+[node name="TextureRect" type="TextureRect" parent="item" unique_id=906117670]
+offset_left = 163.0
+offset_top = 285.67426
+offset_right = 306.668
+offset_bottom = 403.0
+expand_mode = 3
+stretch_mode = 5
+
+[connection signal="body_entered" from="item" to="item" method="_on_body_entered"]

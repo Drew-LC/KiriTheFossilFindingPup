@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dgu0oimeqyjsx"
+path="res://.godot/imported/Fossil_Clickmap_1.png-80651f32502e84fcf6158fe8ce5974a2.res"
+
+[deps]
+
+source_file="res://assets/gfx/placeholder_andrew/Fossil_Clickmap_1.png"
+dest_files=["res://.godot/imported/Fossil_Clickmap_1.png-80651f32502e84fcf6158fe8ce5974a2.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

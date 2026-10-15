@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bb0kmjavu6swa"]
+
+[ext_resource type="LabelSettings" uid="uid://cup7athgbt0ug" path="res://assets/styles/saveScreen.tres" id="1_xvydj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i24gk"]
+bg_color = Color(0.29, 0.20648, 0.15079999, 0.5137255)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gwh8"]
+bg_color = Color(0.7968203, 0.6500805, 0.5474119, 0.5137255)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="InputButton" type="Button" unique_id=812220886]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_i24gk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3gwh8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gwh8")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1543215658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1233407562]
+layout_mode = 2
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer" unique_id=2022526144]
+layout_mode = 2
+mouse_filter = 1
+text = "Action"
+label_settings = ExtResource("1_xvydj")
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1552853520]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer" unique_id=536057648]
+layout_mode = 2
+mouse_filter = 1
+text = "Action"
+label_settings = ExtResource("1_xvydj")
+vertical_alignment = 1

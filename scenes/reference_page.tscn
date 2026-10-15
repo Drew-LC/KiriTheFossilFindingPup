@@ -1,0 +1,418 @@
+[gd_scene format=3 uid="uid://dm34ynr46tyq0"]
+
+[ext_resource type="Script" uid="uid://dogs71t5f0vku" path="res://scripts/referenceP_canvas.gd" id="1_ntkct"]
+[ext_resource type="Script" uid="uid://dfjohw2t7bvel" path="res://scenes/reference_page.gd" id="2_ympnu"]
+[ext_resource type="Texture2D" uid="uid://c7xhaa3ljqxkm" path="res://assets/gfx/ID_Sheet/BlankIdSheet.png" id="3_np4kp"]
+[ext_resource type="Texture2D" uid="uid://cj3j8wiyms2xt" path="res://assets/gfx/ID_Sheet/AnkyloRef_short-1.png" id="4_fbhwf"]
+[ext_resource type="Texture2D" uid="uid://bl486f2vktn8k" path="res://assets/gfx/placeholder_mark/button_next.png" id="4_h47s6"]
+[ext_resource type="Texture2D" uid="uid://cdlssxmpgrm3t" path="res://assets/gfx/ID_Sheet/PteroRef_short-1.png" id="4_i6k2g"]
+[ext_resource type="Texture2D" uid="uid://cxwup1p6kysks" path="res://assets/gfx/placeholder_mark/button_next_hover.png" id="5_pxt7v"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="6_pxt7v"]
+[ext_resource type="Texture2D" uid="uid://dq4i2l24ay1ri" path="res://assets/gfx/ID_Sheet/MamenchiRef_short-1.png" id="6_t25tn"]
+[ext_resource type="Texture2D" uid="uid://by8hlmy4mdg7o" path="res://assets/gfx/placeholder_mark/logo.png" id="7_te3ds"]
+[ext_resource type="Texture2D" uid="uid://bw7svix40c8pl" path="res://assets/gfx/placeholder_mark/T-Rex.png" id="7_tlyc4"]
+[ext_resource type="Texture2D" uid="uid://c2oqdb3vnxl67" path="res://assets/gfx/placeholder_mark/pterrr.png" id="9_x0dr0"]
+[ext_resource type="Texture2D" uid="uid://npbv1ovalg6v" path="res://assets/gfx/placeholder_mark/ankyyy.png" id="10_x0dr0"]
+[ext_resource type="Texture2D" uid="uid://cudicu3jv0bsg" path="res://assets/gfx/placeholder_mark/meat.png" id="11_golge"]
+[ext_resource type="Texture2D" uid="uid://sixcwbuods8v" path="res://assets/gfx/placeholder_mark/mamooo.png" id="11_kvcwo"]
+[ext_resource type="Texture2D" uid="uid://bmld5noktj8gs" path="res://assets/gfx/placeholder_mark/trexxx.png" id="12_ky2ak"]
+[ext_resource type="Texture2D" uid="uid://c1gv7ehrm1sg8" path="res://assets/gfx/placeholder_mark/quit_hover.png" id="13_t25tn"]
+[ext_resource type="Texture2D" uid="uid://dld7fhynb5qkf" path="res://assets/gfx/placeholder_mark/quit.png" id="14_tlyc4"]
+[ext_resource type="Texture2D" uid="uid://cyt87ky0h2nat" path="res://assets/gfx/placeholder_mark/button_prev.png" id="15_np4kp"]
+[ext_resource type="Texture2D" uid="uid://di7dpyvdh8bfq" path="res://assets/gfx/placeholder_mark/button_prev_hover.png" id="16_i6k2g"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_f7q3f"]
+color = Color(0.6, 0.44705883, 0.3647059, 1)
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntkct"]
+bg_color = Color(0.35, 0.261275, 0.21350001, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_len36"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+bg_color = Color(1, 0.96862745, 0.7647059, 1)
+border_width_left = 7
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color(0.6, 0.44705883, 0.3647059, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 20
+corner_detail = 15
+expand_margin_left = 10.0
+shadow_color = Color(0.48, 0.35832, 0.2928, 1)
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ummh0"]
+line_spacing = 5.0
+font = ExtResource("6_pxt7v")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkab4"]
+line_spacing = 5.0
+font = ExtResource("6_pxt7v")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+
+[node name="referenceCanvasL" type="CanvasLayer" unique_id=2014010581]
+layer = 2
+script = ExtResource("1_ntkct")
+
+[node name="referencePage" type="Control" parent="." unique_id=107028677]
+custom_minimum_size = Vector2(525, 618)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -308.0
+offset_right = 264.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ympnu")
+referencePages = Array[CompressedTexture2D]([ExtResource("3_np4kp"), ExtResource("4_i6k2g"), ExtResource("4_fbhwf"), ExtResource("6_t25tn"), ExtResource("7_tlyc4")])
+referenceImages = Array[CompressedTexture2D]([ExtResource("7_te3ds"), ExtResource("9_x0dr0"), ExtResource("10_x0dr0"), ExtResource("11_kvcwo"), ExtResource("12_ky2ak")])
+
+[node name="decorations" type="Control" parent="referencePage" unique_id=1683571876]
+z_index = 1
+custom_minimum_size = Vector2(500, 618)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -309.0
+offset_right = 250.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="bookmarkings" type="Control" parent="referencePage/decorations" unique_id=1036294130]
+custom_minimum_size = Vector2(500, 580)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -290.0
+offset_right = 250.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator6" type="VSeparator" parent="referencePage/decorations/bookmarkings" unique_id=395992044]
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -3.0
+offset_right = -29.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_f7q3f")
+
+[node name="VSeparator2" type="VSeparator" parent="referencePage/decorations/bookmarkings" unique_id=2133034675]
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -2.0
+offset_right = -24.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_f7q3f")
+
+[node name="VSeparator3" type="VSeparator" parent="referencePage/decorations/bookmarkings" unique_id=889223484]
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_right = -19.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_f7q3f")
+
+[node name="VSeparator4" type="VSeparator" parent="referencePage/decorations/bookmarkings" unique_id=803607868]
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = 3.0
+offset_right = -14.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_f7q3f")
+
+[node name="VSeparator5" type="VSeparator" parent="referencePage/decorations/bookmarkings" unique_id=1519813050]
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = 7.0
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_f7q3f")
+
+[node name="bone" type="TextureRect" parent="referencePage/decorations" unique_id=792669600]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0517578e-05
+offset_top = -128.0
+offset_right = 39.99997
+offset_bottom = -88.0
+grow_vertical = 0
+rotation = 1.0471976
+scale = Vector2(5, 5)
+pivot_offset = Vector2(25, 23)
+texture = ExtResource("11_golge")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RefContainer" type="MarginContainer" parent="referencePage" unique_id=1304711097]
+custom_minimum_size = Vector2(525, 618)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="exitContainer" type="MarginContainer" parent="referencePage/RefContainer" unique_id=1334958258]
+z_as_relative = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="exitButton" type="TextureButton" parent="referencePage/RefContainer/exitContainer" unique_id=779963682 groups=["UI"]]
+light_mask = 0
+z_index = 2
+custom_minimum_size = Vector2(90, 55)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+focus_behavior_recursive = 2
+mouse_filter = 1
+texture_normal = ExtResource("14_tlyc4")
+texture_pressed = ExtResource("13_t25tn")
+texture_hover = ExtResource("13_t25tn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="referencePage/RefContainer" unique_id=1568338265]
+custom_minimum_size = Vector2(500, 588)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntkct")
+
+[node name="MarginContainer" type="MarginContainer" parent="referencePage/RefContainer/Panel" unique_id=608110005]
+custom_minimum_size = Vector2(500, 588)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -294.0
+offset_right = 250.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="bookCover" type="Panel" parent="referencePage/RefContainer/Panel/MarginContainer" unique_id=1479351246]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_len36")
+
+[node name="MarginContainer" type="MarginContainer" parent="referencePage/RefContainer/Panel/MarginContainer/bookCover" unique_id=626491490]
+custom_minimum_size = Vector2(440, 558)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -279.0
+offset_right = 220.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="bookPage" type="TextureRect" parent="referencePage/RefContainer/Panel/MarginContainer/bookCover/MarginContainer" unique_id=1070789984]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("4_fbhwf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="dinoImageContainer" type="MarginContainer" parent="referencePage" unique_id=936959505]
+custom_minimum_size = Vector2(390, 230)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 67.0
+offset_right = 200.0
+offset_bottom = 267.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="dinoImage" type="TextureRect" parent="referencePage/dinoImageContainer" unique_id=95143247]
+layout_mode = 2
+texture = ExtResource("10_x0dr0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="buttons" type="MarginContainer" parent="referencePage" unique_id=1538084133]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -101.0
+offset_right = 200.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(200, 37)
+
+[node name="NextButtonCon" type="MarginContainer" parent="referencePage/buttons" unique_id=414803791]
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NextButton" type="TextureButton" parent="referencePage/buttons/NextButtonCon" unique_id=577418831 groups=["UI"]]
+z_index = 1
+custom_minimum_size = Vector2(124, 124)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+texture_normal = ExtResource("4_h47s6")
+texture_pressed = ExtResource("5_pxt7v")
+texture_hover = ExtResource("5_pxt7v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="referencePage/buttons/NextButtonCon/NextButton" unique_id=612879634]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -25.5
+offset_right = 36.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0017270336
+text = "Next"
+label_settings = SubResource("LabelSettings_ummh0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PrevButtonCon" type="MarginContainer" parent="referencePage/buttons" unique_id=1288418557]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 400
+
+[node name="PrevButton" type="TextureButton" parent="referencePage/buttons/PrevButtonCon" unique_id=908047218 groups=["UI"]]
+custom_minimum_size = Vector2(124, 124)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+texture_normal = ExtResource("15_np4kp")
+texture_pressed = ExtResource("16_i6k2g")
+texture_hover = ExtResource("16_i6k2g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="referencePage/buttons/PrevButtonCon/PrevButton" unique_id=589388455]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -25.5
+offset_right = 38.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prev"
+label_settings = SubResource("LabelSettings_rkab4")
+
+[connection signal="pressed" from="referencePage/RefContainer/exitContainer/exitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="referencePage/buttons/NextButtonCon/NextButton" to="referencePage" method="_on_next_button_pressed"]
+[connection signal="pressed" from="referencePage/buttons/PrevButtonCon/PrevButton" to="referencePage" method="_on_prev_button_pressed"]

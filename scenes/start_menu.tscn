@@ -1,0 +1,776 @@
+[gd_scene format=3 uid="uid://cx3kjdv1i0m42"]
+
+[ext_resource type="Script" uid="uid://ciilevdgo5n3a" path="res://scripts/start_menu.gd" id="1_fcv5n"]
+[ext_resource type="Script" uid="uid://b2sa2akokuiud" path="res://scripts/start_menu_buttons.gd" id="2_m7x51"]
+[ext_resource type="Texture2D" uid="uid://b6qwy1cp47par" path="res://assets/gfx/placeholder_mark/title_background/图层 1.png" id="2_vnuwp"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="4_h61rw"]
+[ext_resource type="Texture2D" uid="uid://je2og0uurxxh" path="res://assets/gfx/placeholder_mark/title_background/已插入图像(2).png" id="5_b1kog"]
+[ext_resource type="StyleBox" uid="uid://cjmpbsij5qjq6" path="res://assets/styles/start_screen.tres" id="5_ruo1u"]
+[ext_resource type="PackedScene" uid="uid://b7wg414y3gl3h" path="res://scenes/setting_background.tscn" id="6_4v6gu"]
+[ext_resource type="LabelSettings" uid="uid://dx744w2g610j8" path="res://assets/styles/font(title)_format.tres" id="7_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://dp3nsscg3o4l3" path="res://assets/gfx/UI/start_menu/bone.png" id="8_gqu1h"]
+[ext_resource type="StyleBox" uid="uid://bsvtrnkex73c3" path="res://assets/styles/start_menu.tres" id="8_u4qax"]
+[ext_resource type="StyleBox" uid="uid://dwdjqurr2f2sj" path="res://assets/styles/start_menu_hover.tres" id="9_5byqq"]
+[ext_resource type="Shader" path="res://scenes/start_menu.gdshader" id="11_egh8s"]
+[ext_resource type="StyleBox" uid="uid://ce3awvs5degfk" path="res://assets/styles/panel_start_menu.tres" id="11_gqu1h"]
+[ext_resource type="Texture2D" uid="uid://kikbfhfyiynj" path="res://assets/gfx/placeholder_mark/title_background/已插入图像.png" id="12_b1kog"]
+[ext_resource type="SpriteFrames" uid="uid://ba5x6pkvtgbfh" path="res://assets/styles/sprite_frame_grey.tres" id="15_gqu1h"]
+[ext_resource type="Texture2D" uid="uid://d3lqps333us0y" path="res://assets/gfx/UI/start_menu/fossil_icon.png" id="15_s0oe1"]
+[ext_resource type="Texture2D" uid="uid://d4ejegkvv1y0s" path="res://assets/gfx/placeholder_mark/dawgz_logo.png" id="17_trkcg"]
+[ext_resource type="Texture2D" uid="uid://cna67ifrseoi1" path="res://assets/gfx/placeholder_mark/dawgz_letters.png" id="18_fbjtm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ruo1u"]
+shader = ExtResource("11_egh8s")
+shader_parameter/SPEED = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqu1h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 25.0
+bg_color = Color(0.74, 0.54464006, 0.4144, 0.7254902)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.934, 0.89, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
+line_spacing = 5.0
+font = ExtResource("4_h61rw")
+font_size = 40
+outline_size = 10
+outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4qax"]
+bg_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxjfj"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.64, 0.47104004, 0.3584, 0.7882353)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5byqq"]
+bg_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e58y3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 10.0
+bg_color = Color(0.78039217, 0.56078434, 0.4117647, 0.7764706)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_5byqq"]
+font = ExtResource("4_h61rw")
+font_size = 24
+outline_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0oe1"]
+bg_color = Color(0.47, 0.47, 0.47, 0.69411767)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+
+[sub_resource type="Animation" id="Animation_hntex"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("awgs:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("colorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mroui"]
+resource_name = "rotate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("awgs:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("colorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_barking"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lulb"]
+_data = {
+&"RESET": SubResource("Animation_hntex"),
+&"rotate": SubResource("Animation_mroui")
+}
+
+[node name="startMenu" type="Control" unique_id=1655129169]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcv5n")
+
+[node name="backgroundImage" type="TextureRect" parent="." unique_id=1888250522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vnuwp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1510464937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 45
+
+[node name="pattern" type="TextureRect" parent="MarginContainer" unique_id=1088763887]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ruo1u")
+layout_mode = 2
+texture = ExtResource("12_b1kog")
+expand_mode = 3
+
+[node name="titlePanel" type="Panel" parent="." unique_id=64704085]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -258.0
+offset_right = 200.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_ruo1u")
+
+[node name="MarginContainer" type="MarginContainer" parent="titlePanel" unique_id=915720185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="title" type="TextureRect" parent="titlePanel/MarginContainer" unique_id=1238841349]
+layout_mode = 2
+texture = ExtResource("5_b1kog")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="buttonPanel" type="Panel" parent="." unique_id=1452754096]
+clip_contents = true
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -297.0
+offset_right = 151.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqu1h")
+
+[node name="MenuContainer" type="MarginContainer" parent="buttonPanel" unique_id=1600273318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="GridContainer" parent="buttonPanel/MenuContainer" unique_id=488643710]
+layout_mode = 2
+columns = 2
+
+[node name="startButton" type="TextureButton" parent="buttonPanel/MenuContainer/HBoxContainer" unique_id=717018934 groups=["UI"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_m7x51")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPanel/MenuContainer/HBoxContainer/startButton" unique_id=482245319]
+custom_minimum_size = Vector2(130, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -38.35
+offset_right = 65.0
+offset_bottom = 38.35
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gqu1h")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="buttonPanel/MenuContainer/HBoxContainer/startButton" unique_id=715005207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settingsButton" type="TextureButton" parent="buttonPanel/MenuContainer/HBoxContainer" unique_id=282650570 groups=["UI"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_m7x51")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPanel/MenuContainer/HBoxContainer/settingsButton" unique_id=412849248]
+custom_minimum_size = Vector2(130, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gqu1h")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="buttonPanel/MenuContainer/HBoxContainer/settingsButton" unique_id=1328585709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aboutButton" type="TextureButton" parent="buttonPanel/MenuContainer/HBoxContainer" unique_id=229212177 groups=["UI"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_m7x51")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPanel/MenuContainer/HBoxContainer/aboutButton" unique_id=1865403239]
+custom_minimum_size = Vector2(130, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -38.35
+offset_right = 65.0
+offset_bottom = 38.35
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gqu1h")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="buttonPanel/MenuContainer/HBoxContainer/aboutButton" unique_id=1433723467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "About"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exitButton" type="TextureButton" parent="buttonPanel/MenuContainer/HBoxContainer" unique_id=1261754529 groups=["UI"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_m7x51")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPanel/MenuContainer/HBoxContainer/exitButton" unique_id=1773788978]
+custom_minimum_size = Vector2(130, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -38.35
+offset_right = 65.0
+offset_bottom = 38.35
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_gqu1h")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="buttonPanel/MenuContainer/HBoxContainer/exitButton" unique_id=607846657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="loadGame" parent="." unique_id=192502071 instance=ExtResource("6_4v6gu")]
+visible = false
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+offset_left = -350.0
+offset_right = 350.0
+theme_override_styles/panel = ExtResource("11_gqu1h")
+
+[node name="MarginContainer" type="MarginContainer" parent="loadGame" unique_id=1624271515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Header" type="VBoxContainer" parent="loadGame/MarginContainer" unique_id=1053517021]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="title" type="CenterContainer" parent="loadGame/MarginContainer/Header" unique_id=2133607386]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="loadGame/MarginContainer/Header/title" unique_id=1675381616]
+layout_mode = 2
+text = "Select Game"
+label_settings = ExtResource("7_nxjfj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="loadGame/MarginContainer/Header" unique_id=1535162477]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxFlat_u4qax")
+
+[node name="Spacer" type="Control" parent="loadGame/MarginContainer/Header" unique_id=2048920479]
+layout_mode = 2
+
+[node name="Body" type="MarginContainer" parent="loadGame/MarginContainer/Header" unique_id=563925857]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="loadGame/MarginContainer/Header/Body" unique_id=1618596450]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="newGameButton" type="Button" parent="loadGame/MarginContainer/Header/Body/VBoxContainer" unique_id=1999055181 groups=["UI"]]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.5094862, 0.3507263, 0.24330774, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_h61rw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_nxjfj")
+theme_override_styles/pressed = ExtResource("9_5byqq")
+theme_override_styles/hover = ExtResource("9_5byqq")
+text = "New Game"
+
+[node name="loadGameButton" type="Button" parent="loadGame/MarginContainer/Header/Body/VBoxContainer" unique_id=1064237427 groups=["UI"]]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.5094862, 0.3507263, 0.24330774, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_h61rw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_nxjfj")
+theme_override_styles/pressed = ExtResource("9_5byqq")
+theme_override_styles/hover = ExtResource("9_5byqq")
+text = "Load Game"
+
+[node name="HSeparator" type="HSeparator" parent="loadGame/MarginContainer/Header/Body/VBoxContainer" unique_id=303026844]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxFlat_5byqq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="loadGame/MarginContainer/Header/Body/VBoxContainer" unique_id=1245466102]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="loadGame/MarginContainer/Header/Body/VBoxContainer/HBoxContainer" unique_id=1681060397]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="exitLoad" type="Button" parent="loadGame/MarginContainer/Header/Body/VBoxContainer/HBoxContainer/MarginContainer" unique_id=230895502 groups=["UI"]]
+custom_minimum_size = Vector2(125, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_h61rw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("8_u4qax")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e58y3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e58y3")
+text = "Exit
+"
+
+[node name="FossilizedDino" type="Sprite2D" parent="loadGame/MarginContainer/Header/Body/VBoxContainer/HBoxContainer" unique_id=581065209]
+position = Vector2(548, 27)
+scale = Vector2(0.27368358, 0.27368358)
+texture = ExtResource("15_s0oe1")
+
+[node name="aboutPanel" parent="." unique_id=932690318 instance=ExtResource("6_4v6gu")]
+visible = false
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+offset_left = -350.0
+offset_right = 350.0
+theme_override_styles/panel = ExtResource("11_gqu1h")
+
+[node name="MarginContainer" type="MarginContainer" parent="aboutPanel" unique_id=1065803520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Header" type="VBoxContainer" parent="aboutPanel/MarginContainer" unique_id=289902527]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="title" type="CenterContainer" parent="aboutPanel/MarginContainer/Header" unique_id=435715653]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="aboutPanel/MarginContainer/Header/title" unique_id=251852656]
+layout_mode = 2
+text = "About"
+label_settings = ExtResource("7_nxjfj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="aboutPanel/MarginContainer/Header" unique_id=1218014649]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxFlat_u4qax")
+
+[node name="Spacer" type="Control" parent="aboutPanel/MarginContainer/Header" unique_id=25227404]
+layout_mode = 2
+
+[node name="Body" type="MarginContainer" parent="aboutPanel/MarginContainer/Header" unique_id=1803302693]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="aboutPanel/MarginContainer/Header/Body" unique_id=1110556072]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="aboutPanel/MarginContainer/Header/Body/VBoxContainer" unique_id=1304347279]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Kiri the Fossil Finding Pup is a 2D simulation game where you play as a cute dog digging for dinosaur fossils while trying to identify and piece the fossils back together. Follow along, as you assist Kiri in uncovering ancient remains and learning about the Earth's past inhabitants. 
+
+Developed by Team Dawg for the class COMP350: Videogame Development. 
+Main Development Timeline: February 4, 2026 - April 30, 2026
+
+Meet the Team!
+Ella: Producer, Designer, Artist
+Stephanie: Designer, Artist
+Keith: Designer, Programmer
+Mark: Designer, Programmer
+Roamer: Scrum Master, Designer, Programmer, Artist"
+label_settings = SubResource("LabelSettings_5byqq")
+autowrap_mode = 2
+
+[node name="exitAbout" type="Button" parent="aboutPanel/MarginContainer/Header/Body/VBoxContainer" unique_id=1362623076 groups=["UI"]]
+custom_minimum_size = Vector2(125, 75)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_h61rw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("8_u4qax")
+theme_override_styles/pressed = ExtResource("9_5byqq")
+theme_override_styles/hover = ExtResource("9_5byqq")
+text = "Exit
+"
+
+[node name="Panel" type="Panel" parent="." unique_id=798681464]
+visible = false
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -91.0
+offset_right = -362.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.1422124, 1.1422124)
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0oe1")
+
+[node name="Kiri" type="AnimatedSprite2D" parent="." unique_id=1337773054]
+position = Vector2(146, 549)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("15_gqu1h")
+autoplay = "default"
+
+[node name="intro_animation" type="Control" parent="." unique_id=1875482796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro_animation" unique_id=301245087]
+libraries/ = SubResource("AnimationLibrary_0lulb")
+
+[node name="colorRect" type="ColorRect" parent="intro_animation" unique_id=1075026190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34901962, 0.2627451, 0.21176471, 1)
+
+[node name="logo" type="Sprite2D" parent="intro_animation" unique_id=322824400]
+position = Vector2(434, 372)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_trkcg")
+offset = Vector2(0, -200)
+
+[node name="awgs" type="Sprite2D" parent="intro_animation" unique_id=363450004]
+position = Vector2(687, 333)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_fbjtm")
+
+[connection signal="mouse_entered" from="buttonPanel/MenuContainer/HBoxContainer/startButton" to="buttonPanel/MenuContainer/HBoxContainer/startButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttonPanel/MenuContainer/HBoxContainer/startButton" to="buttonPanel/MenuContainer/HBoxContainer/startButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="buttonPanel/MenuContainer/HBoxContainer/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="buttonPanel/MenuContainer/HBoxContainer/settingsButton" to="buttonPanel/MenuContainer/HBoxContainer/settingsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttonPanel/MenuContainer/HBoxContainer/settingsButton" to="buttonPanel/MenuContainer/HBoxContainer/settingsButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="buttonPanel/MenuContainer/HBoxContainer/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="buttonPanel/MenuContainer/HBoxContainer/aboutButton" to="buttonPanel/MenuContainer/HBoxContainer/aboutButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttonPanel/MenuContainer/HBoxContainer/aboutButton" to="buttonPanel/MenuContainer/HBoxContainer/aboutButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="buttonPanel/MenuContainer/HBoxContainer/aboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="mouse_entered" from="buttonPanel/MenuContainer/HBoxContainer/exitButton" to="buttonPanel/MenuContainer/HBoxContainer/exitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttonPanel/MenuContainer/HBoxContainer/exitButton" to="buttonPanel/MenuContainer/HBoxContainer/exitButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="buttonPanel/MenuContainer/HBoxContainer/exitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="loadGame/MarginContainer/Header/Body/VBoxContainer/newGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="loadGame/MarginContainer/Header/Body/VBoxContainer/loadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="loadGame/MarginContainer/Header/Body/VBoxContainer/HBoxContainer/MarginContainer/exitLoad" to="." method="_on_exit_load_pressed"]
+[connection signal="pressed" from="aboutPanel/MarginContainer/Header/Body/VBoxContainer/exitAbout" to="." method="_on_exit_about_pressed"]

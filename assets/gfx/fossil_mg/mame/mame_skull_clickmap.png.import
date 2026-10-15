@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cpgywcegasuh4"
+path="res://.godot/imported/mame_skull_clickmap.png-3dab6e226a54e65453845cebb0f842f8.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/mame/mame_skull_clickmap.png"
+dest_files=["res://.godot/imported/mame_skull_clickmap.png-3dab6e226a54e65453845cebb0f842f8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

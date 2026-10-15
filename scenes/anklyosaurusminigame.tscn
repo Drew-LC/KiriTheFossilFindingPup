@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://cfm3rxarryfrj"]
+
+[ext_resource type="Script" uid="uid://c6205v768udtr" path="res://scripts/snap_zone.gd" id="1_qnjdu"]
+[ext_resource type="Texture2D" uid="uid://r87s2vfv01e2" path="res://assets/gfx/overworld/museum/bg_selection_screen.jpeg" id="2_x7451"]
+[ext_resource type="Texture2D" uid="uid://782sffvhdtdw" path="res://scenes/IMG_0540.png" id="3_4sa32"]
+[ext_resource type="Texture2D" uid="uid://bgtqxnvk628hi" path="res://assets/gfx/fossil_mg/anky/anky_skull_fossil.png" id="4_k570w"]
+[ext_resource type="Texture2D" uid="uid://cypu57sr3kckf" path="res://assets/gfx/fossil_mg/anky/anky_legR_fossil.png" id="4_kqkmf"]
+[ext_resource type="Script" uid="uid://dag4kkkre20yn" path="res://scripts/fossil_pieces.gd" id="5_amogf"]
+[ext_resource type="Texture2D" uid="uid://ctcdsbwhnmxbp" path="res://assets/gfx/fossil_mg/anky/anky_legL_fossil.png" id="6_ntqn4"]
+[ext_resource type="Texture2D" uid="uid://dcc58ok8ufvs3" path="res://assets/gfx/fossil_mg/anky/anky_armL_fossil.png" id="7_andid"]
+[ext_resource type="Texture2D" uid="uid://cdsrywtix554h" path="res://assets/gfx/fossil_mg/anky/anky_armR_fossil.png" id="8_rt4q0"]
+[ext_resource type="Texture2D" uid="uid://ct0juopayl7gb" path="res://assets/gfx/fossil_mg/anky/anky_tail_fossil.png" id="9_sbxx7"]
+[ext_resource type="Texture2D" uid="uid://ddtoojnhb6nfv" path="res://assets/gfx/fossil_mg/anky/anky_torso_fossil.png" id="10_oxn26"]
+
+[node name="Node2D" type="Node2D" unique_id=1773227606]
+
+[node name="SnapZone" type="Node2D" parent="." unique_id=1456361964]
+
+[node name="Head" type="Area2D" parent="SnapZone" unique_id=835841559 groups=["snap_zones"]]
+position = Vector2(762, 299)
+script = ExtResource("1_qnjdu")
+required_piece_id = "AHead"
+
+[node name="Body" type="Area2D" parent="SnapZone" unique_id=1635610854 groups=["snap_zones"]]
+position = Vector2(476, 163)
+script = ExtResource("1_qnjdu")
+required_piece_id = "ABody"
+
+[node name="Tail" type="Area2D" parent="SnapZone" unique_id=1802706123 groups=["snap_zones"]]
+position = Vector2(263, 202)
+script = ExtResource("1_qnjdu")
+required_piece_id = "ATail"
+
+[node name="FLeft" type="Area2D" parent="SnapZone" unique_id=500595475 groups=["snap_zones"]]
+position = Vector2(678, 224)
+script = ExtResource("1_qnjdu")
+required_piece_id = "AFLeft"
+
+[node name="FRight" type="Area2D" parent="SnapZone" unique_id=889310308 groups=["Kiri", "snap_zones"]]
+position = Vector2(587, 254)
+script = ExtResource("1_qnjdu")
+required_piece_id = "AFRight"
+
+[node name="BRight" type="Area2D" parent="SnapZone" unique_id=764655685 groups=["snap_zones"]]
+position = Vector2(419, 218)
+script = ExtResource("1_qnjdu")
+required_piece_id = "ABRight"
+
+[node name="BLeft" type="Area2D" parent="SnapZone" unique_id=643989056 groups=["snap_zones"]]
+position = Vector2(536, 204)
+script = ExtResource("1_qnjdu")
+required_piece_id = "ABLeft"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1432090402]
+position = Vector2(575.05, 322.53433)
+scale = Vector2(0.3015365, 0.30043116)
+texture = ExtResource("2_x7451")
+
+[node name="AnklyosaurusOutline" type="Sprite2D" parent="." unique_id=2036238502]
+position = Vector2(566.99994, 327)
+scale = Vector2(0.20844427, 0.19504096)
+texture = ExtResource("3_4sa32")
+
+[node name="FossilPieces" type="Node2D" parent="." unique_id=1754407895]
+position = Vector2(1, -1)
+
+[node name="AnklyosaurusBLeft" type="TextureButton" parent="FossilPieces" unique_id=545188]
+offset_left = 494.0
+offset_top = 403.99997
+offset_right = 824.0
+offset_bottom = 1318.0
+scale = Vector2(0.22, 0.22)
+texture_normal = ExtResource("6_ntqn4")
+script = ExtResource("5_amogf")
+piece_id = "ABLeft"
+
+[node name="AnklyosaurusTail" type="TextureButton" parent="FossilPieces" unique_id=886395125]
+offset_left = 774.0
+offset_top = 482.0
+offset_right = 2004.7693
+offset_bottom = 999.9487
+scale = Vector2(0.195, 0.195)
+texture_normal = ExtResource("9_sbxx7")
+stretch_mode = 0
+script = ExtResource("5_amogf")
+piece_id = "ATail"
+
+[node name="AnklyosaurusBRight" type="TextureButton" parent="FossilPieces" unique_id=533127429]
+offset_left = 213.0
+offset_top = 407.0
+offset_right = 571.0
+offset_bottom = 1277.0
+scale = Vector2(0.22, 0.22)
+texture_normal = ExtResource("4_kqkmf")
+script = ExtResource("5_amogf")
+piece_id = "ABRight"
+
+[node name="AnklyosaurusBody" type="TextureButton" parent="FossilPieces" unique_id=1447209304]
+offset_left = 719.0
+offset_top = 46.0
+offset_right = 2483.9023
+offset_bottom = 988.0
+scale = Vector2(0.205, 0.205)
+texture_normal = ExtResource("10_oxn26")
+stretch_mode = 0
+script = ExtResource("5_amogf")
+piece_id = "ABody"
+
+[node name="AnklyosaurusFLeft" type="TextureButton" parent="FossilPieces" unique_id=1962808788]
+offset_left = 972.0
+offset_top = 248.0
+offset_right = 1422.0
+offset_bottom = 1185.0
+scale = Vector2(0.22, 0.22)
+texture_normal = ExtResource("7_andid")
+script = ExtResource("5_amogf")
+piece_id = "AFLeft"
+
+[node name="AnklyosaurusFRight" type="TextureButton" parent="FossilPieces" unique_id=1502639813]
+offset_left = 45.99994
+offset_top = 159.0
+offset_right = 945.99994
+offset_bottom = 2113.5457
+scale = Vector2(0.11, 0.11)
+texture_normal = ExtResource("8_rt4q0")
+stretch_mode = 0
+script = ExtResource("5_amogf")
+piece_id = "AFRight"
+
+[node name="AnklyosaurusHead" type="TextureButton" parent="FossilPieces" unique_id=882384260]
+offset_left = 64.0
+offset_top = 444.0
+offset_right = 586.72705
+offset_bottom = 880.3635
+scale = Vector2(0.22, 0.22)
+texture_normal = ExtResource("4_k570w")
+stretch_mode = 0
+script = ExtResource("5_amogf")
+piece_id = "AHead"

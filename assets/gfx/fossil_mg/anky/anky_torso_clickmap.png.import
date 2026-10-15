@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://6ob8h0b8ti72"
+path="res://.godot/imported/anky_torso_clickmap.png-debc2038417094e48c0c7571341850c6.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/anky/anky_torso_clickmap.png"
+dest_files=["res://.godot/imported/anky_torso_clickmap.png-debc2038417094e48c0c7571341850c6.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

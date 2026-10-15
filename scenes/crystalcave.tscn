@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b2il5xxsbqdxb"]
+
+[ext_resource type="Script" uid="uid://pqte4kovp6gv" path="res://scripts/cave_map.gd" id="1_ooq2q"]
+[ext_resource type="PackedScene" uid="uid://d085unnqivpab" path="res://scenes/kiricharacter.tscn" id="2_613m1"]
+[ext_resource type="Texture2D" uid="uid://dvwd5sclsed7w" path="res://assets/gfx/caves/crystal.cave.background.png" id="2_ooq2q"]
+[ext_resource type="Texture2D" uid="uid://dww0ilrc03g7r" path="res://assets/gfx/UI/minimap/CrystalCave_Radar.jpg" id="3_2ool1"]
+[ext_resource type="PackedScene" uid="uid://dwoyvmikmdo3n" path="res://scenes/fossil_minigame.tscn" id="4_4dv5l"]
+[ext_resource type="Shader" uid="uid://c8c46sr1iubpe" path="res://addons/lbg/godottools/dropshadow2d/advanced_blur.gdshader" id="5_cy2nr"]
+[ext_resource type="PackedScene" uid="uid://bapan2er85wre" path="res://scenes/door.tscn" id="5_ooq2q"]
+[ext_resource type="Texture2D" uid="uid://tw780uc33qpi" path="res://assets/gfx/foreground/kbg.crystalcave.fore.png" id="8_c0eh3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0eh3"]
+shader = ExtResource("5_cy2nr")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[node name="crystalcaveScene" type="Node2D" unique_id=1767505299]
+visibility_layer = 3
+scale = Vector2(0.84374624, 0.84374624)
+script = ExtResource("1_ooq2q")
+
+[node name="CaveImage" type="Sprite2D" parent="." unique_id=792457106]
+position = Vector2(442.07593, 382.81628)
+scale = Vector2(0.5896827, 0.5896827)
+texture = ExtResource("2_ooq2q")
+
+[node name="RadarMap" type="Sprite2D" parent="." unique_id=1568743309]
+visibility_layer = 2
+z_index = -10
+position = Vector2(448.00195, 411.26108)
+scale = Vector2(0.71533394, 0.71533394)
+texture = ExtResource("3_2ool1")
+
+[node name="Walls of Cave" type="StaticBody2D" parent="." unique_id=1120441187]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1456055854]
+position = Vector2(146.96362, -1.1920929e-07)
+scale = Vector2(0.6489858, 1.0076277)
+build_mode = 1
+polygon = PackedVector2Array(983.7081, 122.074615, 872.3002, 107.85233, 868.7446, 130.37094, 852.152, 120.88943, 822.5222, 135.11171, 797.6332, 105.48195, 725.3366, 100.74119, 719.41064, 118.51904, 685.0401, 119.70423, 663.70667, 128.00056, 644.74365, 118.51904, 635.2621, 106.66714, 430.22418, 137.48209, 412.4463, 162.3711, 360.2979, 151.70438, 295.11243, 161.1859, 246.51964, 149.334, 242.96407, 131.55614, 161.18593, 124.445, 105.48198, 137.48209, 65.1855, 169.48224, 60.26523, 194.07608, 65.1855, 214.51947, 84.148544, 237.03809, 113.225586, 249.35835, 129.66156, 255.23944, 146.09753, 270.53027, 151.5762, 283.4687, 135.11174, 312.8903, 102.26828, 342.27963, 73.04877, 342.27963, 40.17682, 338.75098, 16.592682, 346.07562, -16.435974, 356.39426, -37.92607, 376.89056, -56.61281, 406.97165, -56.889114, 440.89084, -100.741165, 459.85388, -126.00914, 483.42584, -135.1117, 503.70593, -147.92377, 524.5935, -138.66727, 544.00244, -126.81535, 564.15063, -100.44207, 563.40875, -80.592926, 554.6691, -56.61281, 550.47034, -14.609756, 555.1752, 69.39633, 538.7081, 175.31705, 525.7697, 195.55644, 534.5209, 226.4512, 532.827, 246.53961, 541.06055, 248.36581, 550.47034, 252.01825, 563.40875, 244.71338, 575.1709, 224.62497, 590.46173, 200.2972, 598.5212, 157.05484, 619.8672, 124.44502, 643.5584, 113.225586, 663.3873, 117.33388, 680.2993, 133.92653, 707.5587, 160.7073, 715.1409, 235.58228, 718.66956, 324.7422, 708.7439, 383.50607, 678.67816, 410.89932, 652.80133, 425.50912, 633.9818, 465.68594, 615.16235, 502.2103, 593.9904, 535.0823, 575.1709, 562.4756, 562.2325, 577.0853, 543.413, 595.34753, 532.827, 648.30786, 517.5362, 664.89185, 469.33542, 700.4476, 461.0391, 772.7442, 468.15024, 815.411, 500.15036, 843.8556, 533.3357, 845.0408, 561.7803, 827.26294, 592.5952, 861.63354, 726.5217, 923.2634, 725.33655, 983.7081, 700.4476, 984.8933, 641.18805, 983.7081, 623.41016, 963.5598, 622.225, 954.07837, 530.96533, 983.7081, 509.6319, 1005.0415, 493.0392, 1010.9675, 462.22427, 1032.3009, 448.00198, 983.7081, 445.6316, 960.0043, 406.52032, 954.07837, 362.66827, 976.5969, 353.18674, 965.9303, 338.96448, 886.52246, 317.63104, 815.411, 311.70508, 805.92957, 320.0014, 763.2627, 317.63104, 733.63293, 317.63104, 730.4877, 297.5833, 726.8353, 284.6449, 696.892, 279.70496, 668.44745, 272.5938, 666.0771, 254.81595, 679.11414, 246.5196, 685.0401, 242.96404, 739.6188, 228.18642, 767.0121, 221.1291, 797.6332, 213.33427, 885.3373, 210.9639, 973.0414, 218.07504, 1037.0416, 183.70451, 1063.1158, 133.92651, 1060.7455, 110.22271, 1025.1898, 112.593094, 1003.8563, 100.74119)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1821516899]
+position = Vector2(137.4821, -23.70381)
+scale = Vector2(0.6707324, 1.0587983)
+build_mode = 1
+polygon = PackedVector2Array(400.59442, 429.03894, 420.7426, 440.89084, 443.26123, 434.9649, 448.002, 429.03894, 487.11328, 433.7797, 496.59485, 425.48337, 555.8544, 426.66855, 555.8544, 418.37222, 539.26166, 416.00183, 562.9655, 398.224, 533.33575, 411.26108, 530.96533, 402.96475, 404.14996, 401.77957)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1136226630]
+position = Vector2(125.630196, 0)
+scale = Vector2(0.7181605, 1.0000002)
+build_mode = 1
+polygon = PackedVector2Array(290.3717, 207.40833, 321.18665, 210.9639, 329.48297, 201.48238, 342.52008, 212.1491, 353.18677, 212.1491, 347.26086, 220.44542, 336.59412, 227.55656, 324.7422, 228.74176, 304.594, 228.74176, 298.66803, 226.37137)
+
+[node name="Kiri" parent="." unique_id=66845406 groups=["Kiri", "Player"] instance=ExtResource("2_613m1")]
+position = Vector2(741.92926, 168.29706)
+scale = Vector2(0.22, 0.22)
+
+[node name="animated_sprite_2d" parent="Kiri" index="0" unique_id=1661833244]
+animation = &"default"
+frame_progress = 0.0
+
+[node name="DropShadow2D" parent="Kiri/animated_sprite_2d/Sprite2D" parent_id_path=PackedInt32Array(66845406, 165911319) index="0" unique_id=928541503]
+material = SubResource("ShaderMaterial_c0eh3")
+position = Vector2(8.978516, 19.036133)
+distance = Vector2(0.5, 1)
+
+[node name="Camera2D" parent="Kiri" index="2" unique_id=1755670444]
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_top = 1
+limit_right = 745
+limit_bottom = 645
+
+[node name="DigSpotSpawner" type="Node2D" parent="." unique_id=1800052850]
+visibility_layer = 3
+
+[node name="Doors" type="Node" parent="." unique_id=945404626]
+
+[node name="caveEntrance" parent="Doors" unique_id=790956761 instance=ExtResource("5_ooq2q")]
+position = Vector2(679.00006, 116.00001)
+rotation = -0.82252264
+scale = Vector2(-0.25863594, -1.9551744)
+destination_level_tag = "village"
+destination_door_tag = "door_to_cave"
+
+[node name="Spawn" parent="Doors/caveEntrance" index="1" unique_id=1085989013]
+position = Vector2(132.73813, 8.549065)
+
+[node name="FossilMinigame" parent="." unique_id=1249660656 instance=ExtResource("4_4dv5l")]
+
+[node name="foreground" type="Sprite2D" parent="." unique_id=1698395617]
+z_index = 1
+position = Vector2(442.07608, 383.4091)
+scale = Vector2(0.05894347, 0.058986016)
+texture = ExtResource("8_c0eh3")
+
+[editable path="Kiri"]
+[editable path="Doors/caveEntrance"]

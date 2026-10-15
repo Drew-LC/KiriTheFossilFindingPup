@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://uywxfopvnnvw"]
+
+[ext_resource type="Script" uid="uid://0e1u4c4b4yi" path="res://scripts/canvas_layer.gd" id="1_u7htq"]
+[ext_resource type="PackedScene" uid="uid://b51nqvfopwx8f" path="res://scenes/inventory.tscn" id="2_co2kn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=627654601]
+layer = 2
+script = ExtResource("1_u7htq")
+
+[node name="inventory" parent="." unique_id=1378091349 groups=["inventory"] instance=ExtResource("2_co2kn")]
+visible = false
+offset_left = 127.0
+offset_top = 52.000004
+offset_right = 127.0
+offset_bottom = 52.0
+scale = Vector2(0.75, 0.75)
+mouse_filter = 0

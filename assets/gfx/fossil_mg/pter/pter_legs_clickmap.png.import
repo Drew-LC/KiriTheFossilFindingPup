@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://barbmf3vflmsk"
+path="res://.godot/imported/pter_legs_clickmap.png-1676dfead3357f29b4ea17eea5182caa.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/pter/pter_legs_clickmap.png"
+dest_files=["res://.godot/imported/pter_legs_clickmap.png-1676dfead3357f29b4ea17eea5182caa.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

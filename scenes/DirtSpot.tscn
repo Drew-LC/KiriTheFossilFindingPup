@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://12mfdo2iok4q"]
+
+[ext_resource type="Script" uid="uid://d3nq1upxxxcyw" path="res://scripts/DirtSpotInst.tscn.gd" id="1_cbda3"]
+[ext_resource type="Script" uid="uid://dgwxq6p06cn0l" path="res://scripts/item_data.gd" id="3_13t1p"]
+[ext_resource type="Texture2D" uid="uid://cmwa641u3b5mf" path="res://assets/gfx/placeholder_keith/DirtSpot1.png" id="4_13t1p"]
+
+[sub_resource type="Resource" id="Resource_t0ybt"]
+script = ExtResource("3_13t1p")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsxpv"]
+radius = 17.910555
+height = 39.07758
+
+[node name="DigSpots" type="Area2D" unique_id=1583795059]
+visibility_layer = 3
+script = ExtResource("1_cbda3")
+item_data = SubResource("Resource_t0ybt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=175682840]
+light_mask = 2
+position = Vector2(0, 7.6293945e-06)
+rotation = 1.5707964
+scale = Vector2(0.6141625, 0.6141625)
+shape = SubResource("CapsuleShape2D_xsxpv")
+
+[node name="InventoryIcon" type="TextureRect" parent="." unique_id=682281423]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DigSpotIcon" type="TextureRect" parent="." unique_id=822384383]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 3
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -15.0
+offset_right = 13.548149
+offset_bottom = 6.167036
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Placeholder" type="TextureRect" parent="." unique_id=1597093396]
+visible = false
+visibility_layer = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.274075
+offset_top = -10.583518
+offset_right = 25.274075
+offset_bottom = 10.583518
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9927243, 0.9927243)
+texture = ExtResource("4_13t1p")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

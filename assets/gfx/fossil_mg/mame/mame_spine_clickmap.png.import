@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://vv3yatt5wu30"
+path="res://.godot/imported/mame_spine_clickmap.png-58cf249bd94734e095805e2411a054f8.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/mame/mame_spine_clickmap.png"
+dest_files=["res://.godot/imported/mame_spine_clickmap.png-58cf249bd94734e095805e2411a054f8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

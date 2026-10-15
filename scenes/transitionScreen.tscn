@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cgi3exxve2li"]
+
+[ext_resource type="Script" uid="uid://dh8ms6v24besa" path="res://scripts/transition_screen.gd" id="1_umdin"]
+[ext_resource type="Shader" uid="uid://bkrytcaieohy4" path="res://scripts/skullTransition.gdshader" id="2_kw16c"]
+[ext_resource type="Texture2D" uid="uid://bcih0kkw7k50m" path="res://assets/gfx/placeholder_mark/transitionSkull.png" id="3_okm56"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fic8c"]
+shader = ExtResource("2_kw16c")
+shader_parameter/mask = ExtResource("3_okm56")
+shader_parameter/scale = 0.0
+
+[sub_resource type="Animation" id="Animation_37uq7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("skullTexture:material:shader_parameter/scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fic8c"]
+resource_name = "black_to_white"
+
+[sub_resource type="Animation" id="Animation_umdin"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kw16c"]
+resource_name = "fade_to_black_skull"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skullTexture:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_uja4w"]
+resource_name = "fade_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_okm56"]
+resource_name = "fade_to_normal_skull"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skullTexture:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vd15m"]
+resource_name = "white_to_black"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kw16c"]
+_data = {
+&"RESET": SubResource("Animation_37uq7"),
+&"black_to_white": SubResource("Animation_fic8c"),
+&"fade_to_black": SubResource("Animation_umdin"),
+&"fade_to_black_skull": SubResource("Animation_kw16c"),
+&"fade_to_normal": SubResource("Animation_uja4w"),
+&"fade_to_normal_skull": SubResource("Animation_okm56"),
+&"white_to_black": SubResource("Animation_vd15m")
+}
+
+[node name="transition" type="CanvasLayer" unique_id=244377988]
+layer = 10
+script = ExtResource("1_umdin")
+
+[node name="skullTexture" type="ColorRect" parent="." unique_id=918454418]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_fic8c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1635767035]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21, 0.044099994, 0.044099994, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=43837530]
+libraries/ = SubResource("AnimationLibrary_kw16c")

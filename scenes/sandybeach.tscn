@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://de4wameei10hd"]
+
+[ext_resource type="Script" uid="uid://pqte4kovp6gv" path="res://scripts/cave_map.gd" id="1_2sey6"]
+[ext_resource type="Texture2D" uid="uid://c3782jngxxxp7" path="res://assets/gfx/caves/sandybeachbg.png" id="2_2sey6"]
+[ext_resource type="Texture2D" uid="uid://dk1fyrixv7hpc" path="res://assets/gfx/UI/minimap/SandyBeach_Radar.png" id="3_2sey6"]
+[ext_resource type="PackedScene" uid="uid://d085unnqivpab" path="res://scenes/kiricharacter.tscn" id="4_4lpny"]
+[ext_resource type="Shader" uid="uid://c8c46sr1iubpe" path="res://addons/lbg/godottools/dropshadow2d/advanced_blur.gdshader" id="5_d8dt5"]
+[ext_resource type="PackedScene" uid="uid://bapan2er85wre" path="res://scenes/door.tscn" id="6_pes4p"]
+[ext_resource type="PackedScene" uid="uid://dwoyvmikmdo3n" path="res://scenes/fossil_minigame.tscn" id="7_sx824"]
+[ext_resource type="Texture2D" uid="uid://c5us4puahsniw" path="res://assets/gfx/foreground/sandybeach.fore.png" id="8_eut8k"]
+[ext_resource type="Script" uid="uid://ndxr1tv8vk3i" path="res://scripts/easter_egg.gd" id="9_jvfgo"]
+[ext_resource type="Texture2D" uid="uid://cpd82au1pw7u1" path="res://assets/gfx/museum cat/museumcat4.png" id="10_4lpny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8dt5"]
+shader = ExtResource("5_d8dt5")
+shader_parameter/erosion = false
+shader_parameter/radius = 4.0
+shader_parameter/quality = 2
+shader_parameter/strength = 0.5
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvfgo"]
+radius = 9.481522
+
+[sub_resource type="Animation" id="Animation_d8dt5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_pes4p"]
+resource_name = "rotate"
+length = 0.5333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.05, 0.1), Vector2(1e-05, 0.1), Vector2(-0.05, 0.1), Vector2(-0.1, 0.1), Vector2(-0.05, 0.1), Vector2(1e-05, 0.1), Vector2(0.05, 0.1), Vector2(0.1, 0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sx824"]
+_data = {
+&"RESET": SubResource("Animation_d8dt5"),
+&"rotate": SubResource("Animation_pes4p")
+}
+
+[node name="sandybeachScene" type="Node2D" unique_id=1767505299]
+visibility_layer = 3
+scale = Vector2(0.84374624, 0.84374624)
+script = ExtResource("1_2sey6")
+
+[node name="CaveImage" type="Sprite2D" parent="." unique_id=792457106]
+position = Vector2(442.07593, 295.11246)
+scale = Vector2(0.5896827, 0.5896827)
+texture = ExtResource("2_2sey6")
+
+[node name="RadarMap" type="Sprite2D" parent="." unique_id=1568743309]
+visibility_layer = 2
+z_index = -10
+position = Vector2(411.2611, 298.66797)
+scale = Vector2(0.75428134, 0.75428134)
+texture = ExtResource("3_2sey6")
+
+[node name="foreground" type="Sprite2D" parent="." unique_id=113513349]
+z_index = 2
+position = Vector2(442.07605, 295.11246)
+scale = Vector2(0.0983708, 0.098370805)
+texture = ExtResource("8_eut8k")
+flip_h = true
+
+[node name="Walls of Cave" type="StaticBody2D" parent="." unique_id=1120441187]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1456055854]
+position = Vector2(146.96362, -1.1920929e-07)
+scale = Vector2(0.6489858, 1.0076277)
+build_mode = 1
+polygon = PackedVector2Array(-226.4512, 1.1762187, 140.61887, 1.1762187, 147.92377, 12.938405, 153.4024, 34.11034, 153.4024, 48.224964, 131.4878, 87.04018, 105.920715, 116.44564, 67.5701, 149.37976, 58.439026, 159.96573, 51.134125, 189.3712, 52.960358, 196.42851, 51.134125, 205.83826, 27.39328, 247.0059, 27.39328, 259.9443, 115.05182, 265.8254, 127.83536, 234.0675, 155.22864, 205.83826, 281.23776, 78.80665, 323.2408, 62.33959, 403.59445, 58.810932, 449.24997, 65.86824, 502.2103, 65.86824, 556.9968, 68.22068, 584.39014, 70.57312, 630.04565, 70.57312, 675.7012, 63.515804, 730.4877, 63.515804, 810.84143, 58.810932, 894.84753, 74.101776, 995.28955, 114.09321, 1024.509, 147.02733, 1024.509, 185.84254, 1033.6401, 225.83398, 1035.4664, 236.41994, 1019.0304, 342.27963, 1019.0304, 358.74667, 1033.6401, 421.08627, 1031.814, 441.082, 1046.4237, 465.78256, 1050.0762, 476.36853, 1035.4664, 518.7124, 1000.7682, 526.9459, 978.85364, 524.5935, 953.2865, 519.8886, 867.4542, 468.135, 851.0182, 464.60635, 790.7529, 464.60635, 774.317, 470.48746, 746.9237, 506.95023, 551.5182, 548.11786, 485.77432, 548.11786, 368.89627, 518.7124, 352.4603, 515.1838, 317.76218, 499.8929, 312.28348, 491.6594, 168.01218, 418.73383, 135.14023, 406.97165, 104.09448, 345.8083, 109.57315, 290.526, 23.740845, 284.6449, 21.914627, 314.05038, -5.478668, 356.39426, 10.957306, 395.20947, 31.045715, 417.55762, 158.88107, 466.9588, 206.36276, 503.42157, 261.14935, 543.413, 341.50302, 559.88007, 394.46335, 585.7569, -226.4512, 585.7569)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1839948062]
+polygon = PackedVector2Array(105.48195, 33.185333, 106.66714, 26.07419, 114.96347, 16.592667, 119.70423, 16.592667, 129.18576, 20.148237, 132.74133, 28.44457, 131.55614, 30.81495)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=226508834]
+polygon = PackedVector2Array(88.88928, 47.407616, 93.63004, 39.111286, 100.74119, 40.296474, 105.48195, 46.222427, 104.29676, 49.778, 91.25967, 49.778, 88.88928, 48.592808)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=2067645039]
+polygon = PackedVector2Array(21.333427, 304.59393, 24.889, 304.59393, 32.00014, 311.70508, 30.81495, 314.07547, 20.148237, 315.26065, 17.777857, 312.8903, 18.963047, 308.1495)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1496028524]
+polygon = PackedVector2Array(192.00085, 565.3358, 195.55643, 565.3358, 197.9268, 561.7803, 201.48238, 561.7803, 206.22313, 566.52106, 203.85275, 571.2618, 193.18604, 571.2618)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1219618604]
+polygon = PackedVector2Array(220.44542, 548.74316, 231.11214, 553.48395, 233.48251, 558.2247, 233.48251, 564.15063, 224.00099, 567.70624, 213.33427, 565.3358, 210.9639, 560.5951, 213.33427, 552.29877)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1667039919]
+polygon = PackedVector2Array(259.5567, 330.66812, 264.29745, 330.66812, 271.4086, 334.2237, 274.96417, 343.70523, 278.51974, 349.63116, 282.07532, 350.81638, 292.74203, 361.4831, 293.92722, 366.22385, 291.55685, 372.1498, 278.51974, 372.1498, 266.66785, 374.52017, 257.18634, 372.1498, 250.07518, 363.85345, 240.59366, 365.03867, 240.59366, 359.1127, 242.96404, 356.7423, 245.33443, 356.7423, 248.89, 360.29788, 250.07518, 352.00156, 248.89, 347.2608, 250.07518, 342.52005, 248.89, 340.14966, 250.07518, 334.2237, 252.44556, 333.0385, 254.81595, 330.66812)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=884556644]
+polygon = PackedVector2Array(565.3358, 405.33514, 571.2618, 410.0759, 576.00256, 414.81665, 574.8174, 418.37222, 565.3358, 424.2982, 554.6691, 423.11298, 551.1135, 414.81665, 553.48395, 412.44626, 554.6691, 410.0759, 560.5951, 405.33514)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1493773923]
+polygon = PackedVector2Array(362.66827, 101.92638, 366.22385, 98.370804, 369.77942, 98.370804, 372.1498, 103.111565, 372.1498, 105.48195, 368.59424, 105.48195)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1359737309]
+polygon = PackedVector2Array(477.63174, 182.51933, 482.3725, 184.88971, 483.5577, 188.44528, 484.7429, 192.00085, 484.7429, 195.55643, 495.4096, 197.9268, 498.96518, 199.112, 500.15036, 201.48238, 498.96518, 202.66757, 496.5948, 202.66757, 495.4096, 205.03795, 490.66885, 205.03795, 482.3725, 207.40833, 482.3725, 213.33427, 480.00214, 214.51947, 468.15024, 214.51947, 465.77985, 210.9639, 469.33542, 207.40833, 466.96503, 199.112, 465.77985, 190.81566, 469.33542, 189.63046, 472.891, 183.70451)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=2021276810]
+polygon = PackedVector2Array(685.0401, 414.81665, 689.7808, 411.26108, 693.3364, 412.44626, 695.7068, 416.00183, 695.7068, 420.7426, 686.2253, 419.5574, 685.0401, 417.18704)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=853055245]
+polygon = PackedVector2Array(749.04034, 373.335, 756.1515, 369.77942, 758.52185, 369.77942, 760.8923, 376.89056, 759.7071, 379.26093, 749.04034, 378.07574)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1540547696]
+polygon = PackedVector2Array(740.744, 175.40819, 743.1144, 175.40819, 747.85516, 171.85262, 751.41077, 173.03781, 751.41077, 181.33414, 739.55884, 181.33414, 738.37366, 178.96376)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=243723321]
+polygon = PackedVector2Array(727.7069, 186.0749, 728.8921, 183.70451, 731.2625, 183.70451, 733.6329, 186.0749)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=790654082]
+polygon = PackedVector2Array(80.59295, 423.11298, 81.77814, 433.7797, 87.704094, 426.66855, 86.518906, 423.11298)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1425984913]
+polygon = PackedVector2Array(149.334, 559.4099, 148.1488, 564.15063, 150.51918, 565.3358, 152.88957, 562.96545, 154.07475, 559.4099)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=222877417]
+polygon = PackedVector2Array(106.66714, 182.51933, 107.85233, 190.81566, 112.593094, 187.26009, 111.4079, 181.33414)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1017030200]
+polygon = PackedVector2Array(174.22299, 114.96347, 169.48224, 124.445, 171.85262, 126.81538, 181.33414, 118.51904)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=457503123]
+polygon = PackedVector2Array(312.8903, 388.74246, 310.5199, 402.96475, 312.8903, 402.96475, 317.63104, 389.92764)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1582982808]
+polygon = PackedVector2Array(445.6316, 453.92795, 446.8168, 463.40945, 450.37238, 462.22427, 451.55756, 453.92795)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1449558444]
+polygon = PackedVector2Array(546.3728, 361.4831, 547.558, 369.77942, 551.1135, 369.77942, 549.92834, 361.4831)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=826584739]
+polygon = PackedVector2Array(773.9294, 432.5945, 773.9294, 445.6316, 777.4849, 444.4464, 778.6701, 432.5945)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1618222024]
+polygon = PackedVector2Array(664.89185, 247.7048, 663.70667, 260.74188, 667.2622, 259.5567, 668.4474, 248.89)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=1610467827]
+polygon = PackedVector2Array(362.66827, 205.03795, 362.66827, 221.63062, 368.59424, 215.70467, 369.77942, 205.03795)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=177506758]
+polygon = PackedVector2Array(528.5949, 120.88943, 528.5949, 131.55614, 532.1505, 129.18576, 533.3357, 122.074615)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="Walls of Cave" unique_id=658984361]
+polygon = PackedVector2Array(726.5217, 132.74133, 725.33655, 138.66728, 728.8921, 150.51918, 731.2625, 148.1488, 732.4477, 132.74133)
+
+[node name="Kiri" parent="." unique_id=66845406 groups=["Kiri", "Player"] instance=ExtResource("4_4lpny")]
+position = Vector2(55.70398, 242.96404)
+scale = Vector2(0.22, 0.22)
+
+[node name="animated_sprite_2d" parent="Kiri" index="0" unique_id=1661833244]
+animation = &"default"
+frame_progress = 0.0
+
+[node name="DropShadow2D" parent="Kiri/animated_sprite_2d/Sprite2D" parent_id_path=PackedInt32Array(66845406, 165911319) index="0" unique_id=928541503]
+material = SubResource("ShaderMaterial_d8dt5")
+position = Vector2(8.978699, 19.036133)
+distance = Vector2(0.5, 1)
+
+[node name="Camera2D" parent="Kiri" index="2" unique_id=1755670444]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 1
+limit_right = 745
+limit_bottom = 497
+
+[node name="DigSpotSpawner" type="Node2D" parent="." unique_id=1800052850]
+visibility_layer = 3
+
+[node name="Doors" type="Node" parent="." unique_id=945404626]
+
+[node name="beachEntrance" parent="Doors" unique_id=790956761 instance=ExtResource("6_pes4p")]
+position = Vector2(4, 201.99998)
+rotation = -3.1364815
+scale = Vector2(-0.25863594, -1.9551744)
+destination_level_tag = "village"
+destination_door_tag = "door_to_beach"
+
+[node name="CollisionShape2D" parent="Doors/beachEntrance" index="0" unique_id=1936581892]
+position = Vector2(0.1580944, 4.091652)
+scale = Vector2(1, 0.99999994)
+
+[node name="Spawn" parent="Doors/beachEntrance" index="1" unique_id=1085989013]
+position = Vector2(132.73813, 8.549065)
+
+[node name="FossilMinigame" parent="." unique_id=1249660656 instance=ExtResource("7_sx824")]
+
+[node name="easterEgg" type="Area2D" parent="." unique_id=17666624]
+script = ExtResource("9_jvfgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easterEgg" unique_id=1024912350]
+position = Vector2(130.37094, 347.2608)
+shape = SubResource("CircleShape2D_jvfgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="easterEgg" unique_id=452468434]
+visible = false
+position = Vector2(150.51918, 400.59436)
+rotation = -6.2831855
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_4lpny")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="easterEgg" unique_id=1334796221]
+libraries/ = SubResource("AnimationLibrary_sx824")
+
+[connection signal="body_entered" from="easterEgg" to="easterEgg" method="_on_body_entered"]
+[connection signal="body_exited" from="easterEgg" to="easterEgg" method="_on_body_exited"]
+
+[editable path="Kiri"]
+[editable path="Doors/beachEntrance"]

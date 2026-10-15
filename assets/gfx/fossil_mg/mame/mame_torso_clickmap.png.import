@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://coi1ht7l1dyy8"
+path="res://.godot/imported/mame_torso_clickmap.png-b6048b1bf97111647de74e7922e08640.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/mame/mame_torso_clickmap.png"
+dest_files=["res://.godot/imported/mame_torso_clickmap.png-b6048b1bf97111647de74e7922e08640.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

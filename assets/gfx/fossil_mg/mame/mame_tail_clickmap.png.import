@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bxehl0ih1geii"
+path="res://.godot/imported/mame_tail_clickmap.png-44cb267a3577debf67c94535cb9729f5.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/mame/mame_tail_clickmap.png"
+dest_files=["res://.godot/imported/mame_tail_clickmap.png-44cb267a3577debf67c94535cb9729f5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

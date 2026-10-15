@@ -1,0 +1,847 @@
+[gd_scene format=3 uid="uid://bilcnib66fkov"]
+
+[ext_resource type="Script" uid="uid://c5dfic7c4d412" path="res://scripts/quest_board.gd" id="1_0sdjb"]
+[ext_resource type="Texture2D" uid="uid://bu0ai46yne31q" path="res://assets/gfx/placeholder_andrew/shop/TransparentBlack.png" id="1_v7j2o"]
+[ext_resource type="Texture2D" uid="uid://6on25vbn0yya" path="res://assets/gfx/placeholder_mark/gems.png" id="2_q1cbq"]
+[ext_resource type="SpriteFrames" uid="uid://cioliij02t830" path="res://assets/styles/shopKeeper.tres" id="3_i8jbg"]
+[ext_resource type="Texture2D" uid="uid://6841kwpmw5m" path="res://assets/gfx/fossil_mg/gem/gem_transparent.png" id="7_ctxd3"]
+[ext_resource type="StyleBox" uid="uid://t10fqef5wgs5" path="res://assets/styles/quest_box.tres" id="7_r77sb"]
+[ext_resource type="Script" uid="uid://dnru4kvasi7s3" path="res://scripts/questBox.gd" id="8_k0pr5"]
+[ext_resource type="StyleBox" uid="uid://ny4trusi2mop" path="res://assets/styles/side_style_box_flat.tres" id="9_37233"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="9_i8jbg"]
+[ext_resource type="Script" uid="uid://bdl7lku1fm1fa" path="res://scripts/side_questBox.gd" id="10_v2o7d"]
+[ext_resource type="Texture2D" uid="uid://dw5yl0o8ue738" path="res://assets/gfx/placeholder_mark/scribbles0.png" id="10_xj033"]
+[ext_resource type="Texture2D" uid="uid://js3assb34723" path="res://assets/gfx/placeholder_mark/scribbles1.png" id="11_37233"]
+[ext_resource type="Texture2D" uid="uid://c178e8fe7u0ly" path="res://assets/gfx/placeholder_mark/scribbles2.png" id="12_v2o7d"]
+[ext_resource type="Texture2D" uid="uid://dld7fhynb5qkf" path="res://assets/gfx/placeholder_mark/quit.png" id="14_v2o7d"]
+[ext_resource type="Texture2D" uid="uid://c1gv7ehrm1sg8" path="res://assets/gfx/placeholder_mark/quit_hover.png" id="15_k0kvc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k0kvc"]
+line_spacing = 5.0
+font = ExtResource("9_i8jbg")
+font_size = 30
+outline_size = 10
+outline_color = Color(0.02, 0.017053334, 0.013199999, 0.6431373)
+shadow_size = 10
+shadow_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctxd3"]
+bg_color = Color(0.6666667, 0.4745098, 0.34901962, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8235294, 0.7058824, 0.54901963, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i8jbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctxd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1cbq"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_37233"]
+line_spacing = 5.0
+font = ExtResource("9_i8jbg")
+font_size = 30
+shadow_size = 10
+shadow_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2o7d"]
+font = ExtResource("9_i8jbg")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37233"]
+bg_color = Color(0.54673964, 0.45917368, 0.7804757, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.897926, 0.6920187, 0.1749897, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0kvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xj033")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_37233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2o7d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="QuestBoard" type="CanvasLayer" unique_id=666313516]
+layer = 2
+
+[node name="QuestBoard" type="Control" parent="." unique_id=1928199195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0sdjb")
+multi_gem = ExtResource("2_q1cbq")
+
+[node name="BG" type="TextureRect" parent="QuestBoard" unique_id=1556577872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v7j2o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard" unique_id=2131558412]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -457.5
+offset_right = 457.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Shopkeeper" type="Control" parent="QuestBoard/HBoxContainer" unique_id=2098985897]
+custom_minimum_size = Vector2(260, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="QuestBoard/HBoxContainer/Shopkeeper" unique_id=1640486155]
+position = Vector2(90.5, 233)
+scale = Vector2(0.10450001, 0.10450001)
+sprite_frames = ExtResource("3_i8jbg")
+autoplay = "default"
+frame = 2
+frame_progress = 0.27360234
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer" unique_id=1208266784]
+layout_mode = 2
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="ScrollContainer" type="ScrollContainer" parent="QuestBoard/HBoxContainer/MarginContainer" unique_id=1058220703]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer" unique_id=1114983609]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TRex_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=847444679]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer" unique_id=1164321192]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("7_r77sb")
+script = ExtResource("8_k0pr5")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" unique_id=758817763]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer" unique_id=1096403363]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1051086192]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=558251140]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "MAIN QUEST ONE"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=445798746]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1353736800]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1185865279 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=422779503]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=127082006]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=820678452]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1908036795]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=2030609079]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shop_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=725122848]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer" unique_id=1890071774]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("9_37233")
+script = ExtResource("10_v2o7d")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" unique_id=1491351619]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer" unique_id=2067365989]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1983150579]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=9252522]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Side Quest: Get Dressed"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=546204143]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=121081900]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=432582187 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=916281212]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1348385518]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1197295167]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=20246435]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1301734069]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1230601523]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer" unique_id=1443783296]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_37233")
+script = ExtResource("10_v2o7d")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" unique_id=1674186902]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer" unique_id=1352769832]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1306486823]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1875237858]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Side Quest: Home Upgrade"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=963842493]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=985944218]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=517683003 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=724672193]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1220522035]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=2122857565]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1004793990]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1394402069]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anky_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1284593295]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer" unique_id=147456645]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("7_r77sb")
+script = ExtResource("8_k0pr5")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" unique_id=1910095504]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer" unique_id=78084907]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=789450808]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1929225482]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "MAIN QUEST TWO"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1067909106]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=177513005]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=114456248 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=910474639]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1831549649]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=386574606]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=688885168]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1595841206]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mame_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1062533005]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer" unique_id=611391087]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("7_r77sb")
+script = ExtResource("8_k0pr5")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" unique_id=2054761172]
+custom_minimum_size = Vector2(0, 145)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer" unique_id=2146301119]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=539516292]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1638043271]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "MAIN QUEST THREE"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1148286920]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=2084061983]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1239116475 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1256220474]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=357907879]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=87963533]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1230296802]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=814950050]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pter_MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=649714656]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer" unique_id=1237022197]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("7_r77sb")
+script = ExtResource("8_k0pr5")
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" unique_id=1260660300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -12.5
+offset_right = 5.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer" unique_id=128375888]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1110511330]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=914385433]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "MAIN QUEST FOUR"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="Desc" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=975286534]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "???"
+label_settings = SubResource("LabelSettings_k0kvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer" unique_id=1670010786]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1560953629 groups=["UI"]]
+custom_minimum_size = Vector2(100, 62.5)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("9_i8jbg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctxd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i8jbg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ctxd3")
+text = "ACCEPT"
+
+[node name="VSeparator" type="VSeparator" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1162010047]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_q1cbq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1643653664]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=458321663]
+layout_mode = 2
+text = "Rewards:"
+label_settings = SubResource("LabelSettings_37233")
+
+[node name="textureRect" type="TextureRect" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=641356119]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ctxd3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=285620502]
+layout_mode = 2
+text = "3 Gems"
+label_settings = SubResource("LabelSettings_v2o7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scribbles" type="AnimatedSprite2D" parent="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2037212199]
+unique_name_in_owner = true
+visible = false
+position = Vector2(488.5, 331.00003)
+scale = Vector2(0.12474996, 0.12474996)
+sprite_frames = SubResource("SpriteFrames_k0kvc")
+frame_progress = 0.66090286
+
+[node name="Quit" type="TextureButton" parent="QuestBoard" unique_id=2132932770 groups=["UI"]]
+z_index = 1
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_right = 1.0
+offset_bottom = 75.0
+grow_horizontal = 0
+texture_normal = ExtResource("14_v2o7d")
+texture_hover = ExtResource("15_k0kvc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TRex_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_trex_pressed"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Shop_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_shop_pressed"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Home_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_home_pressed"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Anky_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_anky_pressed"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Mame_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_mame_pressed"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="QuestBoard/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Pter_MarginContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer/Button" to="QuestBoard" method="_on_quest_pter_pressed"]
+[connection signal="pressed" from="QuestBoard/Quit" to="QuestBoard" method="_on_quit_pressed"]

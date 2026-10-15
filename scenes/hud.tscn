@@ -1,0 +1,372 @@
+[gd_scene format=3 uid="uid://hyu8fjje03dr"]
+
+[ext_resource type="Texture2D" uid="uid://citeg8p8xnl0u" path="res://assets/gfx/UI/minimap/Radar_Circle.png" id="1_5ysmq"]
+[ext_resource type="Script" uid="uid://bv35u8xk1pp7k" path="res://scripts/hud.gd" id="1_6fi6k"]
+[ext_resource type="Script" uid="uid://c0r35iog0c74l" path="res://scripts/radar_minimap.gd" id="2_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://da5x4loj2jtwr" path="res://assets/gfx/UI/HUD/HUD_MenuButton_NotPressed.png" id="2_48y67"]
+[ext_resource type="Texture2D" uid="uid://cp3uidl5wsec2" path="res://assets/gfx/UI/HUD/HUD_MenuButton_Pressed.png" id="3_084dp"]
+[ext_resource type="Texture2D" uid="uid://b3qpnp1itel0c" path="res://assets/gfx/UI/tutorial/tutorial_esc_unpressed.png" id="4_48y67"]
+[ext_resource type="Texture2D" uid="uid://dy4cw6kj0jlam" path="res://assets/gfx/UI/tutorial/tutorial_esc_pressed.png" id="5_084dp"]
+[ext_resource type="PackedScene" uid="uid://bntfkgvu6higc" path="res://scenes/quest_button.tscn" id="5_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://bcko5fuda68iv" path="res://assets/gfx/UI/HUD/HUD_BackpackButton_NotPressed.png" id="6_y2nlu"]
+[ext_resource type="Texture2D" uid="uid://b4drbx8jn58b1" path="res://assets/gfx/UI/HUD/HUD_BackpackButton_Pressed.png" id="7_kp442"]
+[ext_resource type="Texture2D" uid="uid://3uio1mveqp2o" path="res://assets/gfx/UI/tutorial/tutorial_i_unpressed.png" id="8_y2nlu"]
+[ext_resource type="Texture2D" uid="uid://clt11ow2resv0" path="res://assets/gfx/UI/tutorial/tutorial_i_pressed.png" id="9_kp442"]
+[ext_resource type="Texture2D" uid="uid://chkogwcevsytg" path="res://assets/gfx/UI/HUD/HUD_Notification.png" id="10_084dp"]
+[ext_resource type="Texture2D" uid="uid://chklw4ti545yd" path="res://assets/gfx/UI/HUD/HUD_JournalButton_NotPressed.png" id="10_gltyx"]
+[ext_resource type="Texture2D" uid="uid://bbvun1c6muk5f" path="res://assets/gfx/UI/HUD/HUD_JournalButton_Pressed.png" id="11_mgfyp"]
+[ext_resource type="Texture2D" uid="uid://brkb7nkbqgk7j" path="res://assets/gfx/UI/tutorial/tutorial_arrow.png" id="11_y2nlu"]
+[ext_resource type="StyleBox" uid="uid://bh4l3djqk1sx" path="res://assets/styles/grabber.tres" id="12_apjy4"]
+[ext_resource type="Texture2D" uid="uid://ce4gl16n1b6ql" path="res://assets/gfx/UI/tutorial/tutorial_r_unpressed.png" id="12_gltyx"]
+[ext_resource type="Texture2D" uid="uid://c3t3gw6hk6m46" path="res://assets/gfx/UI/tutorial/tutorial_r_pressed.png" id="13_mgfyp"]
+[ext_resource type="Texture2D" uid="uid://b17y5yv58u785" path="res://assets/gfx/UI/minimap/HUD_MinimapFrame.png" id="17_48y67"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="19_iypfu"]
+[ext_resource type="Texture2D" uid="uid://crouu7i36m4of" path="res://assets/gfx/UI/tutorial/tutorial_e_pressed.png" id="20_vh1iw"]
+[ext_resource type="StyleBox" uid="uid://t10fqef5wgs5" path="res://assets/styles/quest_box.tres" id="21_48y67"]
+[ext_resource type="Texture2D" uid="uid://c83yhl76k8f0n" path="res://assets/gfx/UI/tutorial/tutorial_e_unpressed.png" id="21_fgtve"]
+[ext_resource type="Texture2D" uid="uid://dkrs70evxuplo" path="res://assets/gfx/UI/tutorial/tutorial_space_pressed.png" id="22_03o4m"]
+[ext_resource type="StyleBox" uid="uid://dwdjqurr2f2sj" path="res://assets/styles/start_menu_hover.tres" id="22_48y67"]
+[ext_resource type="Texture2D" uid="uid://bq21ssr3gejlj" path="res://assets/gfx/UI/tutorial/tutorial_space_unpressed.png" id="23_dl6ww"]
+[ext_resource type="Texture2D" uid="uid://bec6sxiju25dw" path="res://assets/gfx/UI/tutorial/tutorial_wasd_pressed.png" id="24_8f8xv"]
+[ext_resource type="Texture2D" uid="uid://yjbvxktf4yl6" path="res://assets/gfx/UI/tutorial/tutorial_wasd_w_pressed.png" id="25_v0qwq"]
+[ext_resource type="Texture2D" uid="uid://dysuaev8tjr43" path="res://assets/gfx/UI/tutorial/tutorial_wasd_a_pressed.png" id="26_yawqa"]
+[ext_resource type="Texture2D" uid="uid://bm7y0qmh3r0eh" path="res://assets/gfx/UI/tutorial/tutorial_wasd_s_pressed.png" id="27_qccye"]
+[ext_resource type="Texture2D" uid="uid://c0bmoo7og6b5c" path="res://assets/gfx/UI/tutorial/tutorial_wasd_d_pressed.png" id="28_flipt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkknv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_084dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_48y67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptr5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_kp442")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y2nlu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_of3ib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_mgfyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gltyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkh8c"]
+texture = ExtResource("1_5ysmq")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uorui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vh1iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vh1iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fgtve")
+}],
+"loop": true,
+"name": &"e",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_03o4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_03o4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dl6ww")
+}],
+"loop": true,
+"name": &"space",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_8f8xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8f8xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_v0qwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_yawqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qccye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_flipt")
+}],
+"loop": true,
+"name": &"wasd",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2nlu"]
+bg_color = Color(0.8627451, 0.7254902, 0.5411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[node name="HUD" type="CanvasLayer" unique_id=1675635090]
+script = ExtResource("1_6fi6k")
+
+[node name="HSplitContainer" type="HBoxContainer" parent="." unique_id=164719490]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 906.0
+offset_bottom = 216.0
+scale = Vector2(0.47598916, 0.47598916)
+mouse_filter = 2
+theme_override_constants/separation = 40
+
+[node name="MenuButton" type="TextureButton" parent="HSplitContainer" unique_id=355218510 groups=["UI"]]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("2_48y67")
+texture_pressed = ExtResource("3_084dp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer/MenuButton" unique_id=586534741]
+position = Vector2(14.706216, 189.07996)
+scale = Vector2(0.9176293, 0.91762936)
+sprite_frames = SubResource("SpriteFrames_qkknv")
+frame_progress = 0.3462395
+
+[node name="InventoryButton" type="TextureButton" parent="HSplitContainer" unique_id=288718266 groups=["UI"]]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("6_y2nlu")
+texture_pressed = ExtResource("7_kp442")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer/InventoryButton" unique_id=290294505]
+position = Vector2(14.706216, 189.07996)
+scale = Vector2(0.9176293, 0.91762936)
+sprite_frames = SubResource("SpriteFrames_ptr5m")
+
+[node name="ExclaimationMark" type="Sprite2D" parent="HSplitContainer/InventoryButton" unique_id=1161411009]
+visible = false
+position = Vector2(165.97734, 36.022675)
+scale = Vector2(0.63954705, 0.6395472)
+texture = ExtResource("10_084dp")
+
+[node name="TutorialArrow" type="TextureRect" parent="HSplitContainer/InventoryButton" unique_id=1216998913]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 62.52791
+offset_top = 363.45367
+offset_right = 252.52791
+offset_bottom = 463.45367
+rotation = -1.5707964
+scale = Vector2(0.6487225, 0.6487225)
+mouse_filter = 2
+texture = ExtResource("11_y2nlu")
+
+[node name="NotebookButton" type="TextureButton" parent="HSplitContainer" unique_id=633410981 groups=["UI"]]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_gltyx")
+texture_pressed = ExtResource("11_mgfyp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer/NotebookButton" unique_id=885654186]
+position = Vector2(14.706216, 189.07996)
+scale = Vector2(0.9176293, 0.91762936)
+sprite_frames = SubResource("SpriteFrames_of3ib")
+
+[node name="QuestButton" parent="HSplitContainer" unique_id=134954699 groups=["UI"] instance=ExtResource("5_hd3ao")]
+layout_mode = 2
+
+[node name="Radar" type="PanelContainer" parent="." unique_id=424794146]
+clip_children = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 216.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gkh8c")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Radar" unique_id=1884577316]
+layout_mode = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Radar/SubViewportContainer" unique_id=988551645]
+handle_input_locally = false
+canvas_cull_mask = 4294967294
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+script = ExtResource("2_6fi6k")
+
+[node name="Camera2D" type="Camera2D" parent="Radar/SubViewportContainer/SubViewport" unique_id=123357169]
+limit_enabled = false
+limit_left = 0
+limit_top = 1
+limit_right = 1148
+limit_bottom = 645
+position_smoothing_enabled = true
+
+[node name="Frame" type="TextureRect" parent="Radar" unique_id=178119292]
+layout_mode = 2
+texture = ExtResource("17_48y67")
+
+[node name="Keyboard" type="AnimatedSprite2D" parent="Radar" unique_id=1842287265]
+modulate = Color(1, 1, 1, 0)
+visibility_layer = 3
+z_index = 2
+position = Vector2(-76, 83.000015)
+scale = Vector2(0.47125337, 0.47125337)
+sprite_frames = SubResource("SpriteFrames_uorui")
+animation = &"space"
+
+[node name="Label" type="Label" parent="Radar/Keyboard" unique_id=1573450427]
+z_index = 2
+offset_left = -135.27612
+offset_top = -171.88205
+offset_right = 135.8081
+offset_bottom = -70.88205
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_iypfu")
+theme_override_font_sizes/font_size = 100
+text = "Sniff!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmScreen" type="Panel" parent="." unique_id=355372049]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -134.0
+offset_right = 333.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(333, 134)
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("12_apjy4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmScreen" unique_id=1898772583]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -84.84375
+offset_right = 275.0
+offset_bottom = 84.84375
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmScreen/VBoxContainer" unique_id=2051342076]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmScreen/VBoxContainer/MarginContainer" unique_id=2068488]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="ConfirmScreen/VBoxContainer/MarginContainer/VBoxContainer" unique_id=738886244]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("19_iypfu")
+theme_override_font_sizes/font_size = 50
+text = "Are you sure you want to leave?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ConfirmScreen/VBoxContainer/MarginContainer/VBoxContainer" unique_id=458215325]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxFlat_y2nlu")
+
+[node name="Label2" type="Label" parent="ConfirmScreen/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1400856625]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("19_iypfu")
+theme_override_font_sizes/font_size = 45
+text = "All dig spots will reset!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmScreen/VBoxContainer" unique_id=210926329]
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="YesButton" type="Button" parent="ConfirmScreen/VBoxContainer/HBoxContainer" unique_id=219662747 groups=["UI"]]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("19_iypfu")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("21_48y67")
+theme_override_styles/pressed = ExtResource("22_48y67")
+theme_override_styles/hover = ExtResource("22_48y67")
+text = "YES"
+
+[node name="NoButton" type="Button" parent="ConfirmScreen/VBoxContainer/HBoxContainer" unique_id=1586101978 groups=["UI"]]
+custom_minimum_size = Vector2(85, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("19_iypfu")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("21_48y67")
+theme_override_styles/pressed = ExtResource("22_48y67")
+theme_override_styles/hover = ExtResource("22_48y67")
+text = "NO"
+
+[connection signal="pressed" from="HSplitContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="HSplitContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="HSplitContainer/NotebookButton" to="." method="_on_notebook_button_pressed"]
+[connection signal="pressed" from="HSplitContainer/QuestButton" to="." method="_on_quest_button_pressed"]
+[connection signal="pressed" from="ConfirmScreen/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="ConfirmScreen/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

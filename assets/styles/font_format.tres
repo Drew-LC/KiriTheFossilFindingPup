@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dux6o8ruqpo7y"]
+
+[ext_resource type="FontFile" uid="uid://ei4tvs2dhcse" path="res://assets/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_tjmnu"]
+
+[resource]
+line_spacing = 5.0
+font = ExtResource("1_tjmnu")
+font_size = 32
+font_color = Color(0.12156863, 0.14117648, 0.1254902, 1)
+outline_size = 5

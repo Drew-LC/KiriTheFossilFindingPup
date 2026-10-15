@@ -1,0 +1,141 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://7c87mvnnh5ua"]
+
+[ext_resource type="Texture2D" uid="uid://xcx2jtdm5tde" path="res://assets/gfx/kiri walk animations GREY/brown/skw1.grey.png" id="1_vasri"]
+[ext_resource type="Texture2D" uid="uid://b38vnlrc3d83m" path="res://assets/gfx/kiri walk animations GREY/brown/skw2.grey.png" id="2_c3flk"]
+[ext_resource type="Texture2D" uid="uid://cnyoataxfrxf" path="res://assets/gfx/kiri walk animations GREY/brown/skw3.grey.png" id="3_a06j7"]
+[ext_resource type="Texture2D" uid="uid://d1b5xxry53xli" path="res://assets/gfx/kiri walk animations GREY/brown/skw4.grey.png" id="4_4j2h8"]
+[ext_resource type="Texture2D" uid="uid://c7528aofh13eo" path="res://assets/gfx/kiri walk animations GREY/brown/skw5.grey.png" id="5_3udbi"]
+[ext_resource type="Texture2D" uid="uid://ccguyww0ednc6" path="res://assets/gfx/kiri walk animations GREY/brown/skw6.grey.png" id="6_350v2"]
+[ext_resource type="Texture2D" uid="uid://ch8jui7i3nxr7" path="res://assets/gfx/kiri walk animations GREY/brown/skw7.grey.png" id="7_umnkp"]
+[ext_resource type="Texture2D" uid="uid://dwdmnmyipfgs0" path="res://assets/gfx/kiri walk animations GREY/brown/skw8.grey.png" id="8_hirew"]
+[ext_resource type="Texture2D" uid="uid://bkr3eoqkrj5nf" path="res://assets/gfx/kiri walk animations GREY/brown/ksniff.grey.png" id="9_owyio"]
+[ext_resource type="Texture2D" uid="uid://88wnxx15so7m" path="res://assets/gfx/kiri walk animations GREY/brown/ksniff2.grey.png" id="10_ugbco"]
+[ext_resource type="Texture2D" uid="uid://bexihsy436fo4" path="res://assets/gfx/kiri walk animations GREY/brown/ksniff3.grey.png" id="11_hoqdk"]
+[ext_resource type="Texture2D" uid="uid://ei5ihx8ltcxp" path="res://assets/gfx/kiri walk animations GREY/brown/ksniff4.grey.png" id="12_tp6ig"]
+[ext_resource type="Texture2D" uid="uid://4exu2dbg0i3p" path="res://assets/gfx/kiri walk animations GREY/brown/ksniff5.grey.png" id="13_y3mx0"]
+[ext_resource type="Texture2D" uid="uid://cd0j678200pcj" path="res://assets/gfx/kiri walk animations GREY/brown/kwf1.grey.png" id="14_0li4q"]
+[ext_resource type="Texture2D" uid="uid://cmr0f76te0x62" path="res://assets/gfx/kiri walk animations GREY/brown/kwf2.grey.png" id="15_jb4am"]
+[ext_resource type="Texture2D" uid="uid://dv6ho45bqxv4d" path="res://assets/gfx/kiri walk animations GREY/brown/kwf3.grey.png" id="16_fsbcx"]
+[ext_resource type="Texture2D" uid="uid://cg5xjbnkbsjl8" path="res://assets/gfx/kiri walk animations GREY/brown/kwf4.grey.png" id="17_0p0db"]
+[ext_resource type="Texture2D" uid="uid://du8d1pbl1j17y" path="res://assets/gfx/kiri walk animations GREY/brown/kwf5.grey.png" id="18_4ttw7"]
+[ext_resource type="Texture2D" uid="uid://dmiwu8tpnv1un" path="res://assets/gfx/kiri walk animations GREY/brown/kwf6.grey.png" id="19_a73xe"]
+[ext_resource type="Texture2D" uid="uid://cv1int5r04b65" path="res://assets/gfx/kiri walk animations GREY/brown/kwf7.grey.png" id="20_o3ov2"]
+[ext_resource type="Texture2D" uid="uid://m0psv572nogl" path="res://assets/gfx/kiri walk animations GREY/brown/kwf8.grey.png" id="21_o2vj4"]
+[ext_resource type="Texture2D" uid="uid://bqb7g3155qacp" path="res://assets/gfx/kiri walk animations GREY/brown/kwb1.grey.png" id="22_0s31i"]
+[ext_resource type="Texture2D" uid="uid://xr75n3bt1my4" path="res://assets/gfx/kiri walk animations GREY/brown/kwb2.grey.png" id="23_wymwj"]
+[ext_resource type="Texture2D" uid="uid://b7dq2mdlyiqay" path="res://assets/gfx/kiri walk animations GREY/brown/kwb3.grey.png" id="24_xi6wm"]
+[ext_resource type="Texture2D" uid="uid://bxdtqij0877tt" path="res://assets/gfx/kiri walk animations GREY/brown/kwb4.grey.png" id="25_xqmwq"]
+[ext_resource type="Texture2D" uid="uid://bcnhbbpqx2xln" path="res://assets/gfx/kiri walk animations GREY/brown/kwb5.grey.png" id="26_wclco"]
+[ext_resource type="Texture2D" uid="uid://bsua3hxet48in" path="res://assets/gfx/kiri walk animations GREY/brown/kwb6.grey.png" id="27_6tf82"]
+[ext_resource type="Texture2D" uid="uid://h1u2whvf57oo" path="res://assets/gfx/kiri walk animations GREY/brown/kwb7.grey.png" id="28_bvpuo"]
+[ext_resource type="Texture2D" uid="uid://bf1b2vgo3oi4q" path="res://assets/gfx/kiri walk animations GREY/brown/kwb8.grey.png" id="29_bapim"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vasri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3flk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a06j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4j2h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3udbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_350v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_umnkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hirew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_owyio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ugbco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hoqdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tp6ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_y3mx0")
+}],
+"loop": true,
+"name": &"sniff",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_0li4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jb4am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fsbcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0p0db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4ttw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a73xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o3ov2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_o2vj4")
+}],
+"loop": true,
+"name": &"walkDown",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_0s31i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_wymwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xi6wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xqmwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wclco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6tf82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bvpuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bapim")
+}],
+"loop": true,
+"name": &"walkUp",
+"speed": 10.0
+}]

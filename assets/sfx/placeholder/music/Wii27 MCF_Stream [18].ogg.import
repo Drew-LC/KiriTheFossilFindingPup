@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck8t1u4g01ldp"
+path="res://.godot/imported/Wii27 MCF_Stream [18].ogg-1767527aa7d8518c863ecec9f93170ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/placeholder/music/Wii27 MCF_Stream [18].ogg"
+dest_files=["res://.godot/imported/Wii27 MCF_Stream [18].ogg-1767527aa7d8518c863ecec9f93170ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=120.0
+beat_count=0
+bar_beats=4

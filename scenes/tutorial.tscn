@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cwxlhlytta3nb"]
+
+[ext_resource type="Script" uid="uid://dpj56aagkwgvb" path="res://scripts/tutorial.gd" id="1_c13y7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c13y7"]
+
+[node name="Tutorial" type="CanvasLayer" unique_id=2069841067]
+layer = 3
+visible = false
+script = ExtResource("1_c13y7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=387251497]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1650560072]
+visible = false
+shape = SubResource("RectangleShape2D_c13y7")
+disabled = true

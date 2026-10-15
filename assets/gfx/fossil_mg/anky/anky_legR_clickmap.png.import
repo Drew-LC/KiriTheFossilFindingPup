@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ccknr3bhvw3ey"
+path="res://.godot/imported/anky_legR_clickmap.png-ef22d0a452eb9c3553bb90603c8a4210.res"
+
+[deps]
+
+source_file="res://assets/gfx/fossil_mg/anky/anky_legR_clickmap.png"
+dest_files=["res://.godot/imported/anky_legR_clickmap.png-ef22d0a452eb9c3553bb90603c8a4210.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

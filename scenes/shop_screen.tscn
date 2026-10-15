@@ -1,0 +1,543 @@
+[gd_scene format=3 uid="uid://ch6nt7xixi4fb"]
+
+[ext_resource type="Texture2D" uid="uid://bu0ai46yne31q" path="res://assets/gfx/placeholder_andrew/shop/TransparentBlack.png" id="1_ca2qj"]
+[ext_resource type="Script" uid="uid://cevx8sq15vy2s" path="res://scripts/shop_screen.gd" id="1_j0w1a"]
+[ext_resource type="SpriteFrames" uid="uid://dybccdhp1on5m" path="res://assets/styles/shopKeeperBlue.tres" id="3_yya2k"]
+[ext_resource type="StyleBox" uid="uid://dfypx80rk3h3d" path="res://assets/styles/inventory_button_normal.tres" id="4_c13er"]
+[ext_resource type="Script" path="res://scripts/shop_item.gd" id="5_1qk6f"]
+[ext_resource type="StyleBox" uid="uid://coxia0hkmjpuq" path="res://assets/styles/inventory_button_hover.tres" id="5_05uj0"]
+[ext_resource type="Script" uid="uid://dgwxq6p06cn0l" path="res://scripts/item_data.gd" id="6_kyehq"]
+[ext_resource type="StyleBox" uid="uid://cdh0tk1bnmtpf" path="res://assets/styles/classic_button.tres" id="7_05uj0"]
+[ext_resource type="Texture2D" uid="uid://cvba2wtjnw4du" path="res://assets/gfx/placeholder_mark/pinkpaint.png" id="8_1e312"]
+[ext_resource type="Texture2D" uid="uid://dkccy2rt8oxxn" path="res://assets/gfx/placeholder_mark/dogBowlFurniture.png" id="10_1lfx5"]
+[ext_resource type="Texture2D" uid="uid://d0psfb5q5hl65" path="res://assets/gfx/placeholder_mark/brownpaint.png" id="12_wr4jg"]
+[ext_resource type="Texture2D" uid="uid://bsyeeelkdhnc1" path="res://assets/gfx/placeholder_mark/graypaint.png" id="13_pnpvy"]
+[ext_resource type="Texture2D" uid="uid://b1q06ahkcdblp" path="res://assets/gfx/kiriTopHat/kiritophat.png" id="15_ij1qr"]
+[ext_resource type="Texture2D" uid="uid://b8ualfht4m5c2" path="res://assets/gfx/kiriPartyHat/kiripartyhat.png" id="16_n5xbw"]
+[ext_resource type="Texture2D" uid="uid://d2aaaak132gnr" path="res://assets/gfx/placeholder_mark/tennisFurniture.png" id="17_1e312"]
+[ext_resource type="Texture2D" uid="uid://dld7fhynb5qkf" path="res://assets/gfx/placeholder_mark/quit.png" id="17_w04jy"]
+[ext_resource type="Texture2D" uid="uid://c1gv7ehrm1sg8" path="res://assets/gfx/placeholder_mark/quit_hover.png" id="18_1lfx5"]
+[ext_resource type="Texture2D" uid="uid://crtiys5cpc1lq" path="res://assets/gfx/placeholder_mark/vaseFurniture.png" id="18_wr4jg"]
+[ext_resource type="StyleBox" uid="uid://bi6rftjnbxsh7" path="res://assets/styles/inverse_grid_panels.tres" id="24_e1o7g"]
+[ext_resource type="FontFile" uid="uid://cflwbff3wh5yu" path="res://assets/fonts/SF Atarian System.ttf" id="25_rvov0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c13er"]
+bg_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.8235294, 0.7058824, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uj0"]
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.82634926, 0.6380745, 0.5176096, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8235294, 0.7058824, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_bottom = 7.0
+
+[sub_resource type="Resource" id="Resource_00l08"]
+script = ExtResource("6_kyehq")
+item_name = "Pink Paint"
+description = "A new style for Kiri. (Go to Inventory --> Customizations)"
+icon = ExtResource("8_1e312")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_w04jy"]
+script = ExtResource("6_kyehq")
+item_name = "Brown Paint"
+description = "A new style for Kiri. (Go to Inventory --> Customizations)"
+icon = ExtResource("12_wr4jg")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_1lfx5"]
+script = ExtResource("6_kyehq")
+item_name = "Grey Paint"
+description = "A new style for Kiri. (Go to Inventory --> Customizations)"
+icon = ExtResource("13_pnpvy")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_1e312"]
+script = ExtResource("6_kyehq")
+item_name = "topHat"
+description = "A new style for Kiri. (Go to Inventory --> Customizations)"
+icon = ExtResource("15_ij1qr")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_wr4jg"]
+script = ExtResource("6_kyehq")
+item_name = "partyHat"
+description = "A new style for Kiri. (Go to Inventory --> Customizations)"
+icon = ExtResource("16_n5xbw")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_ttkm5"]
+script = ExtResource("6_kyehq")
+item_name = "dogBowl"
+description = "(In Kiri's Home) Right Click to Place"
+icon = ExtResource("10_1lfx5")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_1qk6f"]
+script = ExtResource("6_kyehq")
+item_name = "tennisBall"
+description = "(In Kiri's Home) Right Click to Place"
+icon = ExtResource("17_1e312")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="Resource" id="Resource_kyehq"]
+script = ExtResource("6_kyehq")
+item_name = "Vase"
+description = "(In Kiri's Home) Right Click to Place"
+icon = ExtResource("18_wr4jg")
+gem_cost = 2
+metadata/_custom_type_script = "uid://dgwxq6p06cn0l"
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvov0"]
+font = ExtResource("25_rvov0")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_yya2k"]
+font = ExtResource("25_rvov0")
+font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_neyh7"]
+bg_color = Color(0.62855995, 0.81, 0.46980003, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrk2k"]
+bg_color = Color(0.55872, 0.72, 0.41760004, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1o7g"]
+bg_color = Color(0.07, 0.07, 0.07, 0.52156866)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ShopScreen" type="CanvasLayer" unique_id=1796370135]
+layer = 2
+
+[node name="ShopScreen" type="Control" parent="." unique_id=983868707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0w1a")
+
+[node name="BG" type="TextureRect" parent="ShopScreen" unique_id=1592313815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ca2qj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopScreen" unique_id=1032269722]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Shopkeeper" type="Control" parent="ShopScreen/HBoxContainer" unique_id=1922809235]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShopScreen/HBoxContainer/Shopkeeper" unique_id=1807559538]
+position = Vector2(80, 226)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("3_yya2k")
+frame_progress = 0.4747584
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopScreen/HBoxContainer" unique_id=1769246933]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer" unique_id=885158338]
+custom_minimum_size = Vector2(500, 320)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_c13er")
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel" unique_id=705028630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer" unique_id=1438853674]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=246435193]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Wearables" type="Button" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=514587376 groups=["UI"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69757766, 0.6975776, 0.6975776, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("25_rvov0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_c13er")
+theme_override_styles/pressed = ExtResource("5_05uj0")
+theme_override_styles/hover = ExtResource("5_05uj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_05uj0")
+disabled = true
+toggle_mode = true
+button_pressed = true
+text = "Wearables"
+
+[node name="Furniture" type="Button" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=364451684 groups=["UI"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69757766, 0.6975776, 0.6975776, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("25_rvov0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_c13er")
+theme_override_styles/pressed = ExtResource("5_05uj0")
+theme_override_styles/hover = ExtResource("5_05uj0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_05uj0")
+toggle_mode = true
+text = "Furniture"
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=304578037]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="WearGrid" type="GridContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=1365974962]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Panel1" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid" unique_id=1041053933]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("7_05uj0")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid/Panel1" unique_id=325887480]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_1e312")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_00l08")
+
+[node name="Panel2" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid" unique_id=879251714]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("7_05uj0")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid/Panel2" unique_id=1224849531]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9872386, 1.0271229)
+texture = ExtResource("12_wr4jg")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_w04jy")
+
+[node name="Panel3" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid" unique_id=7265088]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("7_05uj0")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid/Panel3" unique_id=1345122062]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_pnpvy")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_1lfx5")
+
+[node name="Panel4" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid" unique_id=2093413808]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("7_05uj0")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid/Panel4" unique_id=2138812162]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_ij1qr")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_1e312")
+
+[node name="Panel5" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid" unique_id=839458139]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("7_05uj0")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/WearGrid/Panel5" unique_id=1303148104]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0796535, 1.086519)
+texture = ExtResource("16_n5xbw")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_wr4jg")
+
+[node name="FurnitureGrid" type="GridContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=1375617080]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Panel1" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid" unique_id=527546841]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("24_e1o7g")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid/Panel1" unique_id=616404879]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_1lfx5")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_ttkm5")
+
+[node name="Panel2" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid" unique_id=1072678157]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("24_e1o7g")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid/Panel2" unique_id=87872226]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_1e312")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_1qk6f")
+
+[node name="Panel3" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid" unique_id=57875534]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("24_e1o7g")
+
+[node name="Item" type="TextureRect" parent="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/FurnitureGrid/Panel3" unique_id=2144036138]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_wr4jg")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_1qk6f")
+item_data = SubResource("Resource_kyehq")
+
+[node name="Description" type="Panel" parent="ShopScreen/HBoxContainer/VBoxContainer" unique_id=886072915]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_c13er")
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Description" unique_id=2004555437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer" unique_id=233646458]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Name" type="Label" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer" unique_id=1454092997]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_rvov0")
+
+[node name="Description" type="Label" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer" unique_id=1908408308]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_rvov0")
+
+[node name="Cost" type="Label" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer" unique_id=1852815621]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_rvov0")
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer" unique_id=1897033875]
+layout_mode = 2
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer/MarginContainer" unique_id=1853701234]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Comment" type="Label" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=831630188]
+layout_mode = 2
+size_flags_horizontal = 0
+label_settings = SubResource("LabelSettings_yya2k")
+
+[node name="Buy" type="Button" parent="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=58225542 groups=["UI"]]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.11, 0.11, 0.11, 0.96862745)
+theme_override_fonts/font = ExtResource("25_rvov0")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_neyh7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nrk2k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nrk2k")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e1o7g")
+disabled = true
+text = "BUY"
+
+[node name="Quit" type="TextureButton" parent="ShopScreen" unique_id=750585008 groups=["UI"]]
+z_index = 1
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_bottom = 78.0
+grow_horizontal = 0
+texture_normal = ExtResource("17_w04jy")
+texture_hover = ExtResource("18_1lfx5")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Wearables" to="ShopScreen" method="_on_wearables_pressed"]
+[connection signal="pressed" from="ShopScreen/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Furniture" to="ShopScreen" method="_on_furniture_pressed"]
+[connection signal="pressed" from="ShopScreen/HBoxContainer/VBoxContainer/Description/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buy" to="ShopScreen" method="_on_buy_pressed"]
+[connection signal="pressed" from="ShopScreen/Quit" to="ShopScreen" method="_on_quit_pressed"]
